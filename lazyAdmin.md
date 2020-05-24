@@ -2,6 +2,8 @@
 title: LazyAdmin
 premalink: "/lazyAdmin"
 ---
+[lazyAdmin2](saharshtapi.github.io/WT/lazyAdmin2.md)
+
 # ![front](saharshtapi.github.io/images/lazyAdmin/front.png)
 [https://tryhackme.com/room/lazyadmin](https://tryhackme.com/room/lazyadmin)
 

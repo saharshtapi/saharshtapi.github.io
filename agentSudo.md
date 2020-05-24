@@ -42,7 +42,7 @@ premalink: /agentSudo
  1. Logging in via ssh
  
 ### USER Flag:
-![user_flag](saharshtapi.github.io/images/agentsudo/user.png)
+![user](saharshtapi.github.io/images/agentsudo/user.png)
 2.Download the image 
   >scp james@ip:/home/james/image.jpeg .
   - Now search in the web (_use google image search_)
@@ -56,4 +56,4 @@ premalink: /agentSudo
     >sudo #u-1 /bin/bash
 
 ### Root Flag:
-![rootflag.png](saharshtapi.github.io/images/agentsudo/root.png)
+![root](saharshtapi.github.io/images/agentsudo/root.png)

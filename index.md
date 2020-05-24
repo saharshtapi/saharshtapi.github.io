@@ -1,5 +1,6 @@
 ---
 title: LazyAdmin
+premalink: /lazyAdmin
 ---
 
 # **LAzY ADmIn**

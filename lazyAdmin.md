@@ -2,8 +2,7 @@
 title: LazyAdmin
 premalink: "/lazyAdmin"
 ---
-# **LAzY ADmIn**
-![front](saharshtapi.github.io/images/lazyAdmin/front.png)
+# ![front](saharshtapi.github.io/images/lazyAdmin/front.png)
 [https://tryhackme.com/room/lazyadmin](https://tryhackme.com/room/lazyadmin)
 
 ## Open Ports:

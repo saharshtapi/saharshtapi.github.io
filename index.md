@@ -1,6 +1,5 @@
 ---
 title: LazyAdmin
-premalink: "/lazyAdmin"
 ---
 [lazyAdmin2](saharshtapi.github.io/WT/lazyAdmin2.md)
 

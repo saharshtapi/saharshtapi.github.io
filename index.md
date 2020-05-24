@@ -2,7 +2,7 @@
 title: LazyAdmin
 ---
 
-# LAzY ADmIn
+# **LAzY ADmIn**
 
 
 ## Open Ports:

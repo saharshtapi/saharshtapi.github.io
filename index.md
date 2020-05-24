@@ -1,6 +1,6 @@
 ---
 title: LazyAdmin
-permalink: /
+permalink: /lazyAdmin
 ---
 
 ## Open Ports:

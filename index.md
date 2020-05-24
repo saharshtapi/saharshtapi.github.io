@@ -1,5 +1,6 @@
 ---
 title: LazyAdmin
+premalink: /lazyAdmin
 ---
 # ![front](saharshtapi.github.io/images/lazyAdmin/front.png)
 [https://tryhackme.com/room/lazyadmin](https://tryhackme.com/room/lazyadmin)

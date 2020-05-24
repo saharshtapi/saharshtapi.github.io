@@ -1,6 +1,5 @@
 ---
-title: LazyAdmin
-premalink: "/lazyAdmin"
+title: LazyAdmin2
 ---
 # **LAzY ADmIn**
 ![front](saharshtapi.github.io/images/lazyAdmin/front.png)

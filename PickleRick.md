@@ -32,4 +32,4 @@ permalink: pickleRick
       > 'sudo bash'
     
 ### 3rd Flag:
-![rootflag.png](saharshtapi.github.io/images/lazyAdmin/3rd.png)
+![rootflag.png](saharshtapi.github.io/images/pickleRick/3rd.png)

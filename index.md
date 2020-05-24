@@ -29,7 +29,8 @@ title: LazyAdmin
  - sudo -l
     - This will show about things you can run as **sudo**
     - On tracing the flie Paths we find we can edit _/etc/copy.sh_
-      **Edit the IP and the PORT**
+    
+    **Edit the IP and the PORT**
  - Executing the file and listening to it  via netcat will give to root access
 ### Root Flag:
 ![rootflag.png](images/lazyAdmin/root.flag.png)

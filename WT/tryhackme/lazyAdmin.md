@@ -2,7 +2,6 @@
 title: LazyAdmin
 premalink: "/lazyAdmin"
 ---
-
 # **LAzY ADmIn**
 ![front](images/lazyAdmin/front.png)
 [https://tryhackme.com/room/lazyadmin](https://tryhackme.com/room/lazyadmin)

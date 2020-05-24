@@ -3,6 +3,9 @@ title: LazyAdmin
 permalink: /lazyAdmin
 ---
 
+# LAzY ADmIn
+
+
 ## Open Ports:
   - 21: ssh
   - 80: HTTP

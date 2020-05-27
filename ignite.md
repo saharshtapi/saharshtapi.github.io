@@ -33,4 +33,4 @@ premalink: /ignite
  > su(**and then the passwd**)
 
 ### Root Flag:
-![rootflag.png](saharshtapi.github.io/images/ignite/root.png)
+![rootflag.png](saharshtapi.github.io/images/ignite/ROOT.png)

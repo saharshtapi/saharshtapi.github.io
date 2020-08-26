@@ -1,3 +1,7 @@
+---
+title: WorldCupCTF
+permalink: worldcupctf
+---
 # WorldCup CTF Walkthrough
 ## Open Ports:
 ```

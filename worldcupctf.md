@@ -83,7 +83,7 @@ ssh stuartbroad@$IP
 	* Inside the bash script we find a command *whoami* executed and written to /Desktop/Users.txt
 * On read the Users.txt file
 ```
-cat Desktop/Users.txt
+cat Desktop/test.txt
 ```
 * We see root by which we understand that the file is being execuated by **root**
 * Adding a one liner reverse shell to the script

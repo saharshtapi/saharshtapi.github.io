@@ -1,3 +1,7 @@
+---
+title: charlie and the chocolate factory CTF
+premalink: /chocolate
+---
 # Charlie and the Chocolate Factory
 
 ## Open Ports:

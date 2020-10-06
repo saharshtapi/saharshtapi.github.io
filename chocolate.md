@@ -15,7 +15,7 @@ netcat to all prots from 100 - 125
 nc $IP 100
 nc $IP 113
 ```
-* found a link in port **113** : bit.ly/3igPwZ9
+* found a link in port **113** : http://localhost/key_rev_key
 * found a key file in link
 * Revers engineering the file
 ```

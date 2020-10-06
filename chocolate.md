@@ -57,6 +57,15 @@ nc -lvnp 1234
 ** Now you have the access to the machine**
 * go to /home/charlie
 
+* You will find teleport file which is a id_rsa file(ssh-key)
+* copy the contents of the file to host machine
+* change the permission of the teleport file in the host machine
+```
+chmod 600 teleport
+ssh -i teleport charlie@ip
+```
+## Port 22
+
 ```
 cat uesr.txt
 ```

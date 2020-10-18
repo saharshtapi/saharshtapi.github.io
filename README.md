@@ -1,6 +1,6 @@
 # Welcome to Walkthrough
 
-## Try Hack Me:
+## Try Hack Me: <script src="https://tryhackme.com/badge/50613"></script>
 1. [![logo](images/lazyAdmin/logo.jpeg)](https://saharshtapi.github.io/lazyAdmin.html) [LAzy Admin](lazyAdmin.md)
 2. [![logo](images/pickleRick/logo.jpeg)](https://saharshtapi.github.io/pickleRick.html) [Pickle Rick](pickleRick.md)
 3. [![logo](images/wgel/logo.png)](https://saharshtapi.github.io/wgel.html) [Wgel CTF](wgel.md)

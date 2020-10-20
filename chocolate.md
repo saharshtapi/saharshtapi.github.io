@@ -6,7 +6,7 @@ premalink: /chocolate
 
 ## Open Ports:
 ```
-nmap -A $IP
+nmap  $IP
 ```
 
 ## netcat 

@@ -2,7 +2,7 @@
 title: LazyAdmin
 premalink: /lazyAdmin
 ---
-# ![front](saharshtapi.github.io/images/lazyAdmin/front.png)
+# ![front](/images/lazyAdmin/front.png)
 [https://tryhackme.com/room/lazyadmin](https://tryhackme.com/room/lazyadmin)
 
 ## Open Ports:
@@ -33,4 +33,4 @@ premalink: /lazyAdmin
     **Edit the IP and the PORT**
  - Executing the file and listening to it  via netcat will give to root access
 ### Root Flag:
-![rootflag.png](saharshtapi.github.io/images/lazyAdmin/root.flag.png)
+![rootflag.png](/images/lazyAdmin/root.flag.png)

@@ -2,7 +2,7 @@
 title: Wgel CTF
 premalink: /wgel
 ---
-# ![front](saharshtapi.github.io/images/wgel/front.png)
+# ![front](/images/wgel/front.png)
 [https://tryhackme.com/room/wgelctf](https://tryhackme.com/room/wgelctf)
 
 ## Open Ports:
@@ -20,7 +20,7 @@ premalink: /wgel
  - Connect to SSH using the key
    >ssh -i key.txt jxxxxe@ip
 ### USER Flag:
-![user_flag](saharshtapi.github.io/images/wgel/user.png)
+![user_flag](/images/wgel/user.png)
  
 
 ## Privilege Escalation:
@@ -32,4 +32,4 @@ premalink: /wgel
       >sudo wget --post-file=/root/root_flag.txt ip_of_host
     
 ### Root Flag:
-![rootflag.png](saharshtapi.github.io/images/wgel/root.png)
+![rootflag.png](/images/wgel/root.png)

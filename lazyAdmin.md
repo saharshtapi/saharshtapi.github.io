@@ -10,7 +10,7 @@ premalink: /lazyAdmin/
   - 80: HTTP
   
 ## Port 80:
-1. find sub-doamisn and directories usind **dirb**
+1. find sub-doamisn and directories using **dirb**
    - ip/content **(we find sweetrice)**
    - ip/content/as **(login Page)**
    - ip/content/inc/mysqlbackup **(found username and password)**

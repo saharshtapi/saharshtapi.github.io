@@ -1,3 +1,4 @@
 theme: jekyll-theme-architect
 title: TApI...
 logo: logo.png
+baseurl: "/blog"

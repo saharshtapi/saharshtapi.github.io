@@ -1,6 +1,6 @@
 ---
 layout: page
-title: agentSudo
+title: Agent Sudo
 permalink: /agentSudo
 ---
 # ![front](/images/agentsudo/front.png)

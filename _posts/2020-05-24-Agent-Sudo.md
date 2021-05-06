@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Agent Sudo
-premalink: /agentSudo
+title: agentSudo
+permalink: /agentSudo
 ---
 # ![front](/images/agentsudo/front.png)
 [https://tryhackme.com/room/agentsudoctf](https://tryhackme.com/room/agentsudoctf)

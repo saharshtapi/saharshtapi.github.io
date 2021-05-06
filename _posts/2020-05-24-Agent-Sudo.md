@@ -1,8 +1,11 @@
 ---
 layout: page
-title: Agent Sudo
+title: Agent Sudo WalkThrough
 permalink: /agentSudo
+tags: TryHackMe
+
 ---
+# Agent Sudo 
 # ![front](/images/agentsudo/front.png)
 [https://tryhackme.com/room/agentsudoctf](https://tryhackme.com/room/agentsudoctf)
 

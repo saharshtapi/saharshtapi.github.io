@@ -6,7 +6,8 @@ layout: default
 {% endunless %}
 {% assign posts_count = paginator.posts | size %}
 {% if posts_count > 0 %}
-<h1>recent articles</h1>
+<hr>
+<h1>Articles</h1>
     <div class="post-links">
       {% for post in paginator.posts %}
         <div class="post-link-wrapper">

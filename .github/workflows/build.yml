@@ -17,6 +17,6 @@ jobs:
       - name: Build and test with Jekyll
         run: |
           sudo apt-get -yqq install libpq-dev
-          gem install bundler _2.1.4_
+          gem install bundler:2.1.4
           bundle install --jobs 4 --retry 3
           bundle exec jekyll build

@@ -1,6 +1,6 @@
 title: Blog
 author: GitHub User
-email: miguel-gonzalez@gmx.de
+email: saharshtapi@gmail.com
 description: Saharsh Agrawal
 # > this means to ignore newlines until "show_exerpts:"
   # Write an awesome description for your new site here. You can edit this
@@ -21,7 +21,7 @@ dash:
   date_format: "%b %-d, %Y"
 
   disqus:
-    shortname: bitbrain-github-io
+    shortname: saharshtapi
 
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple

@@ -35,9 +35,7 @@ dash:
     - url: https://github.com/saharshtapi
       icon: github-square
       color: purple
-    - url: /files/resume.pdf
-      icon: staylinked
-      color: yellow
+
 
   show_author: true
 

@@ -1,10 +1,33 @@
+---
+layout: default
+---
 <!DOCTYPE html>
 <html>
 <head>
 	<title>test</title>
 </head>
 <body>
-	<a class=tag>check</a>
+	 <div class="post-links">
+        <div class="post-link-wrapper">
+          <a href="{{ post.url | relative_url }}" class="post-link"></a>
+          <div class="post-meta">
+
+
+            <div class="post-tags">
+ 
+                <a class="tag">TryHackMe</a>
+
+            </div>
+ 
+              <div class="post-excerpt">
+  
+              </div>
+
+          </div>
+        </div>
+
+    </div>
+
 
 </body>
 </html>

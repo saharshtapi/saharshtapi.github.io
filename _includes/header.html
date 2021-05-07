@@ -2,7 +2,9 @@
   <div class="wrapper">
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
     <span class="social_links">
-        {% for link in site.dash.social_links %}<a class="color-{{ link.color }}-hover" href="{{ link.url }}"><i class="fab fa-{{ link.icon }}"></i></a>{% endfor %}
+        {% for link in site.dash.social_links %}<a class="color-{{ link.color }}-hover" href="{{ link.url }}" target="_blank"><i class="fab fa-{{ link.icon }}"></i></a>{% endfor %}
+        <a class="color-{{ link.color }}-hover" href="{{ link.url }}" target="_blank"><i class="fas fa-{{ link.icon }}"></i></a>
+
     </span>
   </div>
 </div>

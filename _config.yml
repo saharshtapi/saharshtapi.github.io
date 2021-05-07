@@ -36,7 +36,7 @@ dash:
       icon: github-square
       color: purple
     - url: /files/resume.pdf
-      icon: file-alt
+      icon: staylinked
       color: yellow
 
   show_author: true

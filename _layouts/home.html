@@ -21,27 +21,18 @@ layout: default
                 {% endfor %}
             </div>
             {% endif %} -->
-
             <div class="post-links">
-        <div class="post-link-wrapper">
-          <a href="{{ post.url | relative_url }}" class="post-link"></a>
-          <div class="post-meta">
-
-
+            <div class="post-link-wrapper">
+            <div class="post-meta">
             <div class="post-tags">
- 
                 <a class="tag">TryHackMe</a>
+              </div> 
+              <div class="post-excerpt">
+              </div>
+            </div>
+             </div>
 
             </div>
- 
-              <div class="post-excerpt">
-  
-              </div>
-
-          </div>
-        </div>
-
-    </div>
             {% if site.date_format %}
               {{ post.date | date: site.date_format }}
             {% else %}

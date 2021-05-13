@@ -12,14 +12,13 @@ tags: TryHackMe
 - 21: FTP
 - 80: HTTP
 - 2222: EtherNetIP-1
-![ports](/images/simplectf/ports.png)
+![ports](/images/simplectf/port.png)
 
 ## Port 21:
-**found name `mitch`**
+* **found name `mitch`**
 
 ## Port 80:
-> Drib
-
+**_Drib_:**
 1. found a page in `/simple`
 	a. CMS made simple exploit found in exploitdb
 		i. Found username: **mitch**

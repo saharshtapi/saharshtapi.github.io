@@ -12,6 +12,7 @@ tags: TryHackMe
 - 21: FTP
 - 80: HTTP
 - 2222: EtherNetIP-1
+
 ![ports](/images/simplectf/port.png)
 
 ## Port 21:

@@ -5,7 +5,7 @@ layout: page
 tags: TryHackMe
 ---
 # Vulnversity
-# ![front](/images/wgel/front.png)
+# ![front](/images/vulnversity/front.png)
 [https://tryhackme.com/room/vulnversity](https://tryhackme.com/room/vulnversity)
 
 ## Open Ports:
@@ -15,6 +15,7 @@ tags: TryHackMe
 * 445- MICROSOFT-DS
 * 3128- SQUID-HTTP
 * 3333- DEC-NOTES
+
 ![ports](/images/vulnversity/ports.png)
 
 ## Gaining Access:
@@ -32,8 +33,8 @@ tags: TryHackMe
 * tty the shell
 > Find / -perm -u=s type f 2> /dev/null
 
-	* found bin/systemctl
-	![ctl](/images/vulnversity/ctl.png)
+* found bin/systemctl
+![ctl](/images/vulnversity/ctl.png)
 > change id to cat root/root.png
 
 ### Root Flag:

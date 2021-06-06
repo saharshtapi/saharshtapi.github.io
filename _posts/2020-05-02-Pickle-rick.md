@@ -1,6 +1,6 @@
 ---
 title: Pickle Rick WalkThrough
-premalink: /pickleRick
+permalink: /pickleRick
 layout: page
 tags: TryHackMe
 ---

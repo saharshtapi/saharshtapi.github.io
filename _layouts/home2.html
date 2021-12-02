@@ -1,7 +1,6 @@
 ---
 layout: default1
 ---
-<h1>Articles2</h1>
 {% unless site.dash.show_author == false %}
   {% include author.html %}
 {% endunless %}
@@ -32,19 +31,18 @@ layout: default1
             </div>
              </div>
             </div>
-            {% if site.date_format %}
+<!--             {% if site.date_format %} -->
             Dec 1,2021
-              {{ post.date | date: site.date_format }}
+<!--               {{ post.date | date: site.date_format }}
             {% else %}
               {{ post.date | date: "%b %-d, %Y" }}
             {% endif %}
-            {% if site.show_excerpts == true %}
+            {% if site.show_excerpts == true %} -->
               <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
+<!--                 {{ post.content | strip_html | truncatewords: 50 }} -->
               </div>
           </div>
         </div>
-      {% endfor %}
     </div>
 
     {% include pagination.html %}

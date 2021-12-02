@@ -32,8 +32,8 @@ layout: default1
             </div>
              </div>
             </div>
-            {% if site.date_format %}
             Dec 1,2021
+            {% if site.date_format %}
               {{ post.date | date: site.date_format }}
             {% else %}
               {{ post.date | date: "%b %-d, %Y" }}
@@ -49,6 +49,3 @@ layout: default1
     {% include pagination.html %}
 
     {% include tagcloud.html %}
-{% else %}
-<h2>no posts yet.</h2>
-{% endif %}

@@ -6,7 +6,6 @@ layout: default1
   {% include author.html %}
 {% endunless %}
 {% assign posts_count = 2 %}
-{% if posts_count > 0 %}
 
 <hr>
 
@@ -14,6 +13,7 @@ layout: default1
     <div class="post-links">
       <!-- {% for post in paginator.posts %} -->
         <div class="post-link-wrapper">
+          <a href="{{ post.url | relative_url }}" class="post-link">Day-1</a>
           <a href="{{ post.url | relative_url }}" class="post-link">Day-1</a>
           <div class="post-meta">
 <!-- 
@@ -54,6 +54,6 @@ layout: default1
     {% include pagination.html %}
 
     {% include tagcloud.html %}
-{% else %}
+<!-- {% else %}
 <h2>no posts yet.</h2>
-{% endif %}
+{% endif %} -->

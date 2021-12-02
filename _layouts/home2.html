@@ -1,17 +1,20 @@
 ---
 layout: default1
 ---
-<h1>Articles2</h1>
+
 {% unless site.dash.show_author == false %}
   {% include author.html %}
 {% endunless %}
+{% assign posts_count = 2 %}
+{% if posts_count > 0 %}
 
 <hr>
 
-<h1>Advent of Cyber 3 (2021)</h1>
+<h1>Articles2</h1>
     <div class="post-links">
+      <!-- {% for post in paginator.posts %} -->
         <div class="post-link-wrapper">
-          <a href="{{ post.url | relative_url }}" class="post-link">Day-1</a>
+          <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
           <div class="post-meta">
 <!-- 
             {% if site.plugins contains "jekyll/tagging" %}
@@ -32,7 +35,6 @@ layout: default1
             </div>
              </div>
             </div>
-            Dec 1,2021
             {% if site.date_format %}
               {{ post.date | date: site.date_format }}
             {% else %}
@@ -42,10 +44,15 @@ layout: default1
               <div class="post-excerpt">
                 {{ post.content | strip_html | truncatewords: 50 }}
               </div>
+            {% endif %}
           </div>
         </div>
+     <!--  {% endfor %} -->
     </div>
 
     {% include pagination.html %}
 
     {% include tagcloud.html %}
+{% else %}
+<h2>no posts yet.</h2>
+{% endif %}

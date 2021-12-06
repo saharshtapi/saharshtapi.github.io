@@ -5,7 +5,7 @@ permalink: /adventofcyber3/day4
 tags: TryHackMe
 ---
 
-# Day-3:Christmas Blackout
+# Day-4:Christmas Blackout
 # ![front](/images/aoc3/d4/front.png)
 [https://tryhackme.com/room/adventofcyber3](https://tryhackme.com/room/adventofcyber3)
 

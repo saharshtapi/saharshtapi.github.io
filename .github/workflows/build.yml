@@ -1,23 +1,24 @@
-name: Build Jekyll
+name: Deploy to Github Pages 
 
 on:
   push:
     branches:
-      - "*"
+      - master 
+  schedule:
+      - cron:  '0 0 * * *'
 
 jobs:
-  build:
+  github-pages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Ruby 2.6.3
-        uses: ruby/setup-ruby@v1.133.2
+      - uses: actions/cache@v2
         with:
-          ruby-version: 2.6.3
-      - name: Build and test with Jekyll
-        run: |
-          sudo apt-get -yqq install libpq-dev
-          gem install jekyll-tagging
-          gem install bundler
-          bundle install --jobs 4 --retry 3
-          bundle exec jekyll build
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-v2-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-v2
+      - uses: helaili/jekyll-action@v2
+        with:
+          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+          target_branch: gh-pages

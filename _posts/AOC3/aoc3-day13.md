@@ -1,7 +1,7 @@
 ---
 title: Day 13
 layout: page
-permalink: /adventofcyber3/day13
+permalink: /CTF/adventofcyber3/day13
 tags: TryHackMe
 ---
 

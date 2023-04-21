@@ -1,6 +1,6 @@
 ---
 title: LazyAdmin WalkThrough
-permalink: /lazyAdmin
+permalink: /CTF/lazyAdmin
 layout: page
 tags: TryHackMe
 ---

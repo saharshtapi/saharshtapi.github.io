@@ -1,6 +1,6 @@
 ---
 title: Pickle Rick WalkThrough
-permalink: /pickleRick
+permalink: /CTF/pickleRick
 layout: page
 tags: TryHackMe
 ---

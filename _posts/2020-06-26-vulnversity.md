@@ -1,6 +1,6 @@
 ---
 title: Vulnversity WalkThrough
-permalink: /vulnversity
+permalink: /CTF/vulnversity
 layout: page
 tags: TryHackMe
 ---

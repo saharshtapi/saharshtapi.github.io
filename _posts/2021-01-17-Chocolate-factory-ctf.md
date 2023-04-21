@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Charlie and The Chocolate Factory CTF WalkThrough
-permalink: /chocolate
+permalink: /CTF/chocolate
 tags: TryHackMe
 ---
 # Charlie and the Chocolate Factory

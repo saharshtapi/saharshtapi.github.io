@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Agent Sudo WalkThrough
-permalink: /agentSudo
+permalink: /CTF/agentSudo
 tags: TryHackMe
 
 ---

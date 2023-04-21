@@ -1,6 +1,6 @@
 ---
 title: Anonymous WalkThrough
-permalink: /anonymous
+permalink: /CTF/anonymous
 layout: page
 tags: TryHackMe
 ---

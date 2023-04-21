@@ -1,6 +1,6 @@
 ---
 title: Simple CTF WalkThrough
-permalink: /simplectf
+permalink: /CTF/simplectf
 layout: page
 tags: TryHackMe
 ---

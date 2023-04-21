@@ -6,7 +6,7 @@ layout: default1
 <!-- BLOGS-->
     <div class="post-links">
         <div class="post-link-wrapper">
-          <a href="/blogs/" class="post-link"><h1 style="margin: 0;">Blogs</h1></a>
+          <a href="{{ post.url | relative_url }}" class="post-link"><h1 style="margin: 0;">Blogs</h1></a>
           <div class="post-meta" style="color: #71513A;">
             Explore my blog section to gain insights into the latest trends and techniques in cybersecurity. From malware to penetration testing, I cover a wide range of topics. Click on the link to discover my realm of knowledge.
             <div class="post-tags">
@@ -32,7 +32,7 @@ layout: default1
 <!-- CTF WALKTHROUGH-->
     <div class="post-links">
       <div class="post-link-wrapper">
-        <a href="{{ post.url | relative_url }}" class="post-link"><h1 style="margin: 0;">CTF WalkThrough</h1></a>
+        <a href="/CTF/" class="post-link"><h1 style="margin: 0;">CTF WalkThrough</h1></a>
         <div class="post-meta" style="color: #71513A;">
           Gain valuable insights into the world of cybersecurity and improve your skills by exploring my comprehensive guide on various CTF challenges. Are you ready to compete with the best?
           <div class="post-tags">

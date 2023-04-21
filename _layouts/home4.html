@@ -5,7 +5,7 @@ layout: default1
 {% assign posts = site.posts | where: "path", "_posts/" %}
 <h1>Articles</h1>
     <div class="post-links">
-        {% for post in posts %}
+    {% for post in posts %}
         <div class="post-link-wrapper">
           <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
           <div class="post-meta">
@@ -40,12 +40,8 @@ layout: default1
             {% endif %}
           </div>
         </div>
-      {% endfor %}
+    {% endfor %}
     </div>
 
     {% include pagination.html %}
 
-    {% include tagcloud.html %}
-{% else %}
-<h2>no posts yet.</h2>
-{% endfor %}

@@ -2,10 +2,9 @@
 layout: default1
 ---
 <hr>
-{% assign posts = site.posts | where: "collection", "_posts/" %}
-<h1>Articles</h1>
+<h1>Articlesz</h1>
     <div class="post-links">
-    {% for post in posts %}
+    {% for post in site.posts %}
         <div class="post-link-wrapper">
           <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
           <div class="post-meta">

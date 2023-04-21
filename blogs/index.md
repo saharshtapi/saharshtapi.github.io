@@ -1,4 +1,4 @@
 ---
-layout: home3
+layout: home4
 permalink: /blogs
 ---

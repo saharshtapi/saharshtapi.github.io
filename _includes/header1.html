@@ -1,6 +1,7 @@
 <div class="site-header">
   <div class="wrapper">
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">Home<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">Blog<b class="command_prompt" style="color: #F24784"></b><b class="blinking_cursor">_</b></a>
     <span class="social_links">
         {% for link in site.dash.social_links %}<a class="color-{{ link.color }}-hover" href="{{ link.url }}" target="_blank"><i class="fab fa-{{ link.icon }}"></i></a>{% endfor %}
         <a class="color-yellow-hover" href="https://www.buymeacoffee.com/saharshtapi" target="_blank"><i class="fas fa-beer"></i></a>

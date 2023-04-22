@@ -36,7 +36,10 @@ dash:
       icon: github-square
       color: purple
 
-
+collections:
+  Projects:
+    output: true
+    
   show_author: true
 
   animation_speed: 50

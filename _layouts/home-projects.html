@@ -2,11 +2,10 @@
 layout: default1
 ---
 {% include author.html %}
-{% assign posts = site.posts | where: "path", "_posts/Projects/" %}
 <hr>
 <h1>Projects</h1>
     <div class="post-links">
-    {% for post in posts %}
+    {% for post in site.Projects %}
         <div class="post-link-wrapper">
           <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
           <div class="post-meta">

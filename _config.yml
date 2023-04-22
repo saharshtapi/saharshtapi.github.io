@@ -39,7 +39,7 @@ dash:
 collections:
   Projects:
     output: true
-    permalink: :slug
+    permalink: :permalink
 
   show_author: true
 

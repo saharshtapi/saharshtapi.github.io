@@ -39,6 +39,7 @@ dash:
 collections:
   Projects:
     output: true
+    permalink: :slug
 
   show_author: true
 

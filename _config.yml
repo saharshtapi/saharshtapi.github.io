@@ -39,7 +39,7 @@ dash:
 collections:
   Projects:
     output: true
-    
+
   show_author: true
 
   animation_speed: 50
@@ -51,6 +51,3 @@ plugins:
  - liquid-md5
  - jekyll/tagging
 
-# Replaces the default avatar provider (gravatar)
-#avatar_source: github
-#github_username: bitbrain

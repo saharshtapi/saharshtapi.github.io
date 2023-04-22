@@ -2,5 +2,5 @@
 title: Chocolate Factory CTF
 permalink: https://tryhackme.com/jr/chocolatefactory
 layout: page
-tags: TryHackMe
+tags: Privsec,Stego,Difficulty:Easy
 ---

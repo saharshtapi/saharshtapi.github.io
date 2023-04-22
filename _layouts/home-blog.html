@@ -6,28 +6,28 @@ layout: default1
 <h1>Blogs</h1>
 <div class="post-links">
   <div class="post-link-wrapper">
-    <a href="/CTF/adventofcyber3/day1" class="post-link">Day-1</a>
+    <a href="https://research.loginsoft.com/threat-research/from-innocence-to-malice-the-onenote-malware-campaign-uncovered/" class="post-link">From Innocence to Malice: The OneNote Malware Campaign Uncovered</a>
     <div class="post-meta">
       <div class="post-links">
       <div class="post-link-wrapper">
       <div class="post-meta">
       <div class="post-tags">
-          <a class="tag">TryHackMe</a>
+          <a class="tag">Qakbot</a>
+          <a class="tag">AgentTesla</a>
+          <a class="tag">AsyncRAT</a>
+          <a class="tag">Redline</a>
+          <a class="tag">IcedID</a>
+          <a class="tag">Emotet</a>
+          <a class="tag">Quasar</a>
         </div> 
         <div class="post-excerpt">
         </div>
       </div>
        </div>
       </div>
-      Dec 1,2021
-      {% if site.date_format %}
-        {{ post.date | date: site.date_format }}
-      {% else %}
-        {{ post.date | date: "%b %-d, %Y" }}
-      {% endif %}
-      {% if site.show_excerpts == true %}
+      Mar 30,2023
         <div class="post-excerpt">
-          {{ post.content | strip_html | truncatewords: 50 }}
+          OneNote has been highly cherished by Threat Actors (TAs) in recent months. Unfortunately, many malware distributors have taken notice and are now using OneNote to deliver malicious files to their victims. These actors attach malicious files to a page within OneNote and then share it with their targets as a .one file. The ONE file reaches its targets through phishing emails. Upon opening the attachment, the victim's computer is compromised.
         </div>
       {% endif %}
     </div>

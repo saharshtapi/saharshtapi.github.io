@@ -27,7 +27,7 @@ dash:
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
     - url: https://twitter.com/saharshtapi
-      icon: x-twitter
+      icon: twitter-square
       color: cyan
     - url: https://www.linkedin.com/in/saharsh-agrawal-146b991b4/
       icon: linkedin-in

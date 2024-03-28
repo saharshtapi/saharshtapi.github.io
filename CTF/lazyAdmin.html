@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saharsh Agrawal</title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>LazyAdmin WalkThrough | Blog</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="LazyAdmin WalkThrough" />
+<meta name="author" content="GitHub User" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Lazy Admin https://tryhackme.com/room/lazyadmin Open Ports: 21: ssh 80: HTTP Port 80: find sub-doamisn and directories using dirb ip/content (we find sweetrice) ip/content/as (login Page) ip/content/inc/mysqlbackup (found username and password) Gaining Access: SweetRice has a Remote Code Execution vulnerablitiy Uploading a php reverse shell in themes listening via netcat will gain you access to the BOX USER Flag: Privilege Escalation: sudo -l This will show about things you can run as sudo On tracing the flie Paths we find we can edit /etc/copy.sh Edit the IP and the PORT Executing the file and listening to it via netcat will give to root access Root Flag:" />
+<meta property="og:description" content="Lazy Admin https://tryhackme.com/room/lazyadmin Open Ports: 21: ssh 80: HTTP Port 80: find sub-doamisn and directories using dirb ip/content (we find sweetrice) ip/content/as (login Page) ip/content/inc/mysqlbackup (found username and password) Gaining Access: SweetRice has a Remote Code Execution vulnerablitiy Uploading a php reverse shell in themes listening via netcat will gain you access to the BOX USER Flag: Privilege Escalation: sudo -l This will show about things you can run as sudo On tracing the flie Paths we find we can edit /etc/copy.sh Edit the IP and the PORT Executing the file and listening to it via netcat will give to root access Root Flag:" />
+<meta property="og:site_name" content="Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-30T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="LazyAdmin WalkThrough" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2020-04-30T00:00:00+00:00","datePublished":"2020-04-30T00:00:00+00:00","description":"Lazy Admin https://tryhackme.com/room/lazyadmin Open Ports: 21: ssh 80: HTTP Port 80: find sub-doamisn and directories using dirb ip/content (we find sweetrice) ip/content/as (login Page) ip/content/inc/mysqlbackup (found username and password) Gaining Access: SweetRice has a Remote Code Execution vulnerablitiy Uploading a php reverse shell in themes listening via netcat will gain you access to the BOX USER Flag: Privilege Escalation: sudo -l This will show about things you can run as sudo On tracing the flie Paths we find we can edit /etc/copy.sh Edit the IP and the PORT Executing the file and listening to it via netcat will give to root access Root Flag:","headline":"LazyAdmin WalkThrough","mainEntityOfPage":{"@type":"WebPage","@id":"/CTF/lazyAdmin"},"url":"/CTF/lazyAdmin"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/icon.jpg" /><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Blog" /></head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Home<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        <a class="color-cyan-hover" href="https://twitter.com/saharshtapi" target="_blank"><i class="fab fa-twitter-square"></i></a><a class="color-blue-hover" href="https://www.linkedin.com/in/saharsh-agrawal-146b991b4/" target="_blank"><i class="fab fa-linkedin-in"></i></a><a class="color-purple-hover" href="https://github.com/saharshtapi" target="_blank"><i class="fab fa-github-square"></i></a>
+        <a class="color--hover" href="" target="_blank"><i class="fas fa-"></i></a>
+
+    </span>
+    <br>
+  </div>
+
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="lazy-admin">Lazy Admin</h1>
+<h1><img src="/images/lazyAdmin/front.png" alt="front" /></h1>
+<p><a href="https://tryhackme.com/room/lazyadmin">https://tryhackme.com/room/lazyadmin</a></p>
+
+<h2 id="open-ports">Open Ports:</h2>
+<ul>
+  <li>21: ssh</li>
+  <li>80: HTTP</li>
+</ul>
+
+<h2 id="port-80">Port 80:</h2>
+<ol>
+  <li>find sub-doamisn and directories using <strong>dirb</strong>
+    <ul>
+      <li>ip/content <strong>(we find sweetrice)</strong></li>
+      <li>ip/content/as <strong>(login Page)</strong></li>
+      <li>ip/content/inc/mysqlbackup <strong>(found username and password)</strong>
+<img src="/images/lazyAdmin/mysqlbackup.png" alt="mysqlbackup.png" /></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="gaining-access">Gaining Access:</h2>
+<p><strong>SweetRice has a <em>Remote</em> <em>Code</em> <em>Execution</em> vulnerablitiy</strong></p>
+<ul>
+  <li>Uploading a <strong>php reverse shell</strong> in themes</li>
+  <li>listening via netcat will gain you access to the <strong>BOX</strong>
+    <h3 id="user-flag">USER Flag:</h3>
+    <p><img src="/images/lazyAdmin/user_flag.png" alt="user_flag" /></p>
+  </li>
+</ul>
+
+<h2 id="privilege-escalation">Privilege Escalation:</h2>
+<ul>
+  <li>sudo -l
+    <ul>
+      <li>This will show about things you can run as <strong>sudo</strong></li>
+      <li>On tracing the flie Paths we find we can edit <em>/etc/copy.sh</em></li>
+    </ul>
+
+    <p><strong>Edit the IP and the PORT</strong></p>
+  </li>
+  <li>Executing the file and listening to it  via netcat will give to root access
+    <h3 id="root-flag">Root Flag:</h3>
+    <p><img src="/images/lazyAdmin/root.flag.png" alt="rootflag.png" /></p>
+  </li>
+</ul>
+
+
+        <script src="https://tryhackme.com/badge/50613"></script>
+      </div>
+
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits" style="color: #fffdd0"><a href="https://github.com/saharhtapi" style="color: #fffdd0"></a>by <a href="https://github.com/saharshtapi" style="color: #fffdd0">TApI</a><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

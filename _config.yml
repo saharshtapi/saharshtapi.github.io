@@ -40,6 +40,9 @@ collections:
   Projects:
     output: true
     permalink: :permalink
+  cve:
+    output: true
+    permalink: /cve/:title/  
 
 # show_author: true
 

@@ -5,9 +5,9 @@ layout: default1
 <hr>
 <h1>CVEs</h1>
     <div class="post-links">
-    {% for cves in site.cves %}
+    {% for post in site.cves %}
         <div class="post-link-wrapper">
-          <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+          <a href="{{ post.permalink}}" class="post-link" target="_blank">{{ post.title }}</a>
           <div class="post-meta">
 <!-- 
             {% if site.plugins contains "jekyll/tagging" %}
@@ -21,7 +21,9 @@ layout: default1
             <div class="post-link-wrapper">
             <div class="post-meta">
             <div class="post-tags">
-                <a class="tag">TryHackMe</a>
+              {% for tag in post.tags %}
+                <a class="tag">{{ tag }}</a>
+                {% endfor %}
               </div> 
               <div class="post-excerpt">
               </div>
@@ -44,4 +46,3 @@ layout: default1
     </div>
 
     {% include pagination.html %}
-

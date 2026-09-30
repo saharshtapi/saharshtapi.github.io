@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Saharsh Agrawal</title><!-- Begin Jekyll SEO tag v2.9.0 -->
+  <title>Saharsh Agrawal</title><!-- Begin Jekyll SEO tag v2.9.1 -->
 <title>Agent Sudo WalkThrough | Blog</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Agent Sudo WalkThrough" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Agent Sudo WalkThrough" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2020-05-24T00:00:00+00:00","datePublished":"2020-05-24T00:00:00+00:00","description":"Agent Sudo https://tryhackme.com/room/agentsudoctf Open Ports: 21: ftp 22: ssh 80: HTTP Port 80: Index Page we can brute force different Agents &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: A&quot; -L &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: B&quot; -L &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: C&quot; -L Port 21: Brute force ftp using Hydra to find the password hydra -l cxxxx -P /rockyou.txt ftp://ip After logging we will find 3 files (1 txt, 2 imgs) binwalk the image we find a zip file inside the image As the zip file is password protected we can use johnTheRipper to crack it. John2zip 8072.zip &gt; hash.txt John hash.txt --wordlist=/rockyou.tx Now…","headline":"Agent Sudo WalkThrough","mainEntityOfPage":{"@type":"WebPage","@id":"/CTF/agentSudo"},"url":"/CTF/agentSudo"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2020-05-24T00:00:00+00:00","datePublished":"2020-05-24T00:00:00+00:00","description":"Agent Sudo https://tryhackme.com/room/agentsudoctf Open Ports: 21: ftp 22: ssh 80: HTTP Port 80: Index Page we can brute force different Agents \u0026gt;Curl \u0026quot;http://ip\u0026quot; -H \u0026quot;User-Agent: A\u0026quot; -L \u0026gt;Curl \u0026quot;http://ip\u0026quot; -H \u0026quot;User-Agent: B\u0026quot; -L \u0026gt;Curl \u0026quot;http://ip\u0026quot; -H \u0026quot;User-Agent: C\u0026quot; -L Port 21: Brute force ftp using Hydra to find the password hydra -l cxxxx -P /rockyou.txt ftp://ip After logging we will find 3 files (1 txt, 2 imgs) binwalk the image we find a zip file inside the image As the zip file is password protected we can use johnTheRipper to crack it. John2zip 8072.zip \u0026gt; hash.txt John hash.txt --wordlist=/rockyou.tx Now…","headline":"Agent Sudo WalkThrough","mainEntityOfPage":{"@type":"WebPage","@id":"/CTF/agentSudo"},"url":"/CTF/agentSudo"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" type="image/png" href="/assets/icon.jpg" /><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Blog" /></head>

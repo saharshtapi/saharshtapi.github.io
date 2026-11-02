@@ -4,39 +4,54 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Saharsh Agrawal</title><!-- Begin Jekyll SEO tag v2.9.1 -->
-<title>Agent Sudo WalkThrough | Blog</title>
+<title>Agent Sudo WalkThrough | Saharsh Agrawal</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Agent Sudo WalkThrough" />
-<meta name="author" content="GitHub User" />
+<meta name="author" content="Saharsh Agrawal" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Agent Sudo https://tryhackme.com/room/agentsudoctf Open Ports: 21: ftp 22: ssh 80: HTTP Port 80: Index Page we can brute force different Agents &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: A&quot; -L &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: B&quot; -L &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: C&quot; -L Port 21: Brute force ftp using Hydra to find the password hydra -l cxxxx -P /rockyou.txt ftp://ip After logging we will find 3 files (1 txt, 2 imgs) binwalk the image we find a zip file inside the image As the zip file is password protected we can use johnTheRipper to crack it. John2zip 8072.zip &gt; hash.txt John hash.txt --wordlist=/rockyou.tx Now…" />
 <meta name="twitter:description" property="og:description" content="Agent Sudo https://tryhackme.com/room/agentsudoctf Open Ports: 21: ftp 22: ssh 80: HTTP Port 80: Index Page we can brute force different Agents &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: A&quot; -L &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: B&quot; -L &gt;Curl &quot;http://ip&quot; -H &quot;User-Agent: C&quot; -L Port 21: Brute force ftp using Hydra to find the password hydra -l cxxxx -P /rockyou.txt ftp://ip After logging we will find 3 files (1 txt, 2 imgs) binwalk the image we find a zip file inside the image As the zip file is password protected we can use johnTheRipper to crack it. John2zip 8072.zip &gt; hash.txt John hash.txt --wordlist=/rockyou.tx Now…" />
-<meta property="og:site_name" content="Blog" />
+<meta property="og:site_name" content="Saharsh Agrawal" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-05-24T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-05-24T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Agent Sudo WalkThrough" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2020-05-24T00:00:00+00:00","datePublished":"2020-05-24T00:00:00+00:00","description":"Agent Sudo https://tryhackme.com/room/agentsudoctf Open Ports: 21: ftp 22: ssh 80: HTTP Port 80: Index Page we can brute force different Agents \u0026gt;Curl \u0026quot;http://ip\u0026quot; -H \u0026quot;User-Agent: A\u0026quot; -L \u0026gt;Curl \u0026quot;http://ip\u0026quot; -H \u0026quot;User-Agent: B\u0026quot; -L \u0026gt;Curl \u0026quot;http://ip\u0026quot; -H \u0026quot;User-Agent: C\u0026quot; -L Port 21: Brute force ftp using Hydra to find the password hydra -l cxxxx -P /rockyou.txt ftp://ip After logging we will find 3 files (1 txt, 2 imgs) binwalk the image we find a zip file inside the image As the zip file is password protected we can use johnTheRipper to crack it. John2zip 8072.zip \u0026gt; hash.txt John hash.txt --wordlist=/rockyou.tx Now…","headline":"Agent Sudo WalkThrough","mainEntityOfPage":{"@type":"WebPage","@id":"/CTF/agentSudo"},"url":"/CTF/agentSudo"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Saharsh Agrawal"},"dateModified":"2020-05-24T00:00:00+00:00","datePublished":"2020-05-24T00:00:00+00:00","description":"Agent Sudo https://tryhackme.com/room/agentsudoctf Open Ports: 21: ftp 22: ssh 80: HTTP Port 80: Index Page we can brute force different Agents \u0026gt;Curl \u0026quot;http://ip\u0026quot; -H \u0026quot;User-Agent: A\u0026quot; -L \u0026gt;Curl \u0026quot;http://ip\u0026quot; -H \u0026quot;User-Agent: B\u0026quot; -L \u0026gt;Curl \u0026quot;http://ip\u0026quot; -H \u0026quot;User-Agent: C\u0026quot; -L Port 21: Brute force ftp using Hydra to find the password hydra -l cxxxx -P /rockyou.txt ftp://ip After logging we will find 3 files (1 txt, 2 imgs) binwalk the image we find a zip file inside the image As the zip file is password protected we can use johnTheRipper to crack it. John2zip 8072.zip \u0026gt; hash.txt John hash.txt --wordlist=/rockyou.tx Now…","headline":"Agent Sudo WalkThrough","mainEntityOfPage":{"@type":"WebPage","@id":"/CTF/agentSudo"},"url":"/CTF/agentSudo"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" type="image/png" href="/assets/icon.jpg" /><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Blog" /></head>
+  <link rel="icon" type="image/png" href="/assets/icon.jpg" /><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Saharsh Agrawal" /></head>
 <body><div class="site-header">
   <div class="wrapper">
     <a class="site-title" rel="author" href="/">Home<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
     <span class="social_links">
         <a class="color-cyan-hover" href="https://twitter.com/saharshtapi" target="_blank"><i class="fab fa-twitter-square"></i></a><a class="color-blue-hover" href="https://www.linkedin.com/in/saharsh-agrawal-146b991b4/" target="_blank"><i class="fab fa-linkedin-in"></i></a><a class="color-purple-hover" href="https://github.com/saharshtapi" target="_blank"><i class="fab fa-github-square"></i></a>
-        <a class="color--hover" href="" target="_blank"><i class="fas fa-"></i></a>
+        <a class="color-yellow-hover" href="https://www.buymeacoffee.com/saharshtapi" target="_blank"><i class="fas fa-beer"></i></a>
 
     </span>
-    <br>
+    <nav class="pf-nav" aria-label="Primary">
+  <a href="/about/" >About</a>
+  <a href="/projects/" >Projects</a>
+  <a href="/CVES/" >CVEs</a>
+  <a href="/CTF/" class="pf-nav-active">CTF</a>
+  <a href="/blogs/" >Writing</a>
+  <a href="/#contact">Contact</a>
+</nav>
+
   </div>
 
 </div>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h1 id="agent-sudo">Agent Sudo</h1>
+        <article class="pf-writeup">
+  <p class="pf-writeup-meta">
+    <span class="pf-writeup-date">May 24, 2020</span>
+    <span class="pf-chip">TryHackMe</span>
+  </p>
+
+  <div class="pf-writeup-body">
+    <h1 id="agent-sudo">Agent Sudo</h1>
 <h1><img src="/images/agentsudo/front.png" alt="front" /></h1>
 <p><a href="https://tryhackme.com/room/agentsudoctf">https://tryhackme.com/room/agentsudoctf</a></p>
 
@@ -125,8 +140,11 @@
   </li>
 </ol>
 
+  </div>
 
-        <script src="https://tryhackme.com/badge/50613"></script>
+  <p class="pf-backlink"><a href="/CTF/"><i class="fas fa-chevron-left"></i> All CTF writeups</a></p>
+</article>
+
       </div>
 
     </main><footer class="site-footer">

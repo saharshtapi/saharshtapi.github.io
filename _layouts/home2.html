@@ -1,373 +1,72 @@
 ---
 layout: default1
 ---
+{% include section-hero.html cmd="ls ./advent-of-cyber-3" %}
 
-{% unless site.dash.show_author == false %}
-  {% include author.html %}
-{% endunless %}
-
-<hr>
-
-<h1>Advent of Cyber 3 (2021)</h1>
-    <div>
-      Get started with Cyber Security in 25 Days - Learn the basics by doing a new, beginner friendly security challenge every day leading up to Christmas.
-    </div><br>
-    <div class="post-links">
-        <div class="post-link-wrapper">
-          <a href="/CTF/adventofcyber3/day1" class="post-link">Day-1</a>
-          <div class="post-meta">
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            Dec 1,2021
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-        <div class="post-link-wrapper">
-          <a href="/CTF/adventofcyber3/day2" class="post-link">Day-2</a>
-          <div class="post-meta">
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            Dec 2,2021
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-        <div class="post-link-wrapper">
-          <a href="/CTF/adventofcyber3/day3" class="post-link">Day-3</a>
-          <div class="post-meta">
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            Dec 3,2021
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-        <div class="post-link-wrapper">
-          <a href="/CTF/adventofcyber3/day4" class="post-link">Day-4</a>
-          <div class="post-meta">
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            Dec 4,2021
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-        <div class="post-link-wrapper">
-          <a href="/CTF/adventofcyber3/day5" class="post-link">Day-5</a>
-          <div class="post-meta">
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            Dec 5,2021
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-                <div class="post-link-wrapper">
-          <a href="/CTF/adventofcyber3/day7" class="post-link">Day-7</a>
-          <div class="post-meta">
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            Dec 7,2021
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-        <div class="post-link-wrapper">
-          <a href="/CTF/adventofcyber3/day9" class="post-link">Day-9</a>
-          <div class="post-meta">
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            Dec 9,2021
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-                <div class="post-link-wrapper">
-          <a href="/CTF/adventofcyber3/day10" class="post-link">Day-10</a>
-          <div class="post-meta">
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            Dec 10,2021
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-                        <div class="post-link-wrapper">
-          <a href="/CTF/adventofcyber3/day11" class="post-link">Day-11</a>
-          <div class="post-meta">
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            Dec 11,2021
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-        <div class="post-link-wrapper">
-          <a href="/CTF/adventofcyber3/day12" class="post-link">Day-12</a>
-          <div class="post-meta">
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            Dec 12,2021
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-        <div class="post-link-wrapper">
-          <a href="/CTF/adventofcyber3/day13" class="post-link">Day-13</a>
-          <div class="post-meta">
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            Dec 13,2021
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-        <div class="post-link-wrapper">
-          <a href="/CTF/adventofcyber3/day14" class="post-link">Day-14</a>
-          <div class="post-meta">
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            Dec 14,2021
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-        <div class="post-link-wrapper">
-          <a href="/CTF/adventofcyber3/day15" class="post-link">Day-15</a>
-          <div class="post-meta">
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            Dec 15,2021
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-    </div>
-
-    {% include pagination.html %}
-
-    {% include tagcloud.html %}
-
-
+<div class="pf-grid pf-grid-3">
+  <article class="pf-card">
+    <h2 class="pf-card-title"><i class="fas fa-calendar-day"></i> Day 1</h2>
+    <p class="pf-meta-line"><span class="pf-chip">Dec 1, 2021</span></p>
+    <a class="pf-card-link" href="{{ '/CTF/adventofcyber3/day1' | relative_url }}">Save The Gifts <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="pf-card">
+    <h2 class="pf-card-title"><i class="fas fa-calendar-day"></i> Day 2</h2>
+    <p class="pf-meta-line"><span class="pf-chip">Dec 2, 2021</span></p>
+    <a class="pf-card-link" href="{{ '/CTF/adventofcyber3/day2' | relative_url }}">Elf HR Problems <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="pf-card">
+    <h2 class="pf-card-title"><i class="fas fa-calendar-day"></i> Day 3</h2>
+    <p class="pf-meta-line"><span class="pf-chip">Dec 3, 2021</span></p>
+    <a class="pf-card-link" href="{{ '/CTF/adventofcyber3/day3' | relative_url }}">Christmas Blackout <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="pf-card">
+    <h2 class="pf-card-title"><i class="fas fa-calendar-day"></i> Day 4</h2>
+    <p class="pf-meta-line"><span class="pf-chip">Dec 4, 2021</span></p>
+    <a class="pf-card-link" href="{{ '/CTF/adventofcyber3/day4' | relative_url }}">Christmas Blackout <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="pf-card">
+    <h2 class="pf-card-title"><i class="fas fa-calendar-day"></i> Day 5</h2>
+    <p class="pf-meta-line"><span class="pf-chip">Dec 5, 2021</span></p>
+    <a class="pf-card-link" href="{{ '/CTF/adventofcyber3/day5' | relative_url }}">Pesky Elf Forum <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="pf-card">
+    <h2 class="pf-card-title"><i class="fas fa-calendar-day"></i> Day 7</h2>
+    <p class="pf-meta-line"><span class="pf-chip">Dec 7, 2021</span></p>
+    <a class="pf-card-link" href="{{ '/CTF/adventofcyber3/day7' | relative_url }}">Migration Without Security <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="pf-card">
+    <h2 class="pf-card-title"><i class="fas fa-calendar-day"></i> Day 9</h2>
+    <p class="pf-meta-line"><span class="pf-chip">Dec 9, 2021</span></p>
+    <a class="pf-card-link" href="{{ '/CTF/adventofcyber3/day9' | relative_url }}">Where Is All This Data Going <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="pf-card">
+    <h2 class="pf-card-title"><i class="fas fa-calendar-day"></i> Day 10</h2>
+    <p class="pf-meta-line"><span class="pf-chip">Dec 10, 2021</span></p>
+    <a class="pf-card-link" href="{{ '/CTF/adventofcyber3/day10' | relative_url }}">Offensive Is The Best Defence <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="pf-card">
+    <h2 class="pf-card-title"><i class="fas fa-calendar-day"></i> Day 11</h2>
+    <p class="pf-meta-line"><span class="pf-chip">Dec 11, 2021</span></p>
+    <a class="pf-card-link" href="{{ '/CTF/adventofcyber3/day11' | relative_url }}">Where Are The Reindeers? <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="pf-card">
+    <h2 class="pf-card-title"><i class="fas fa-calendar-day"></i> Day 12</h2>
+    <p class="pf-meta-line"><span class="pf-chip">Dec 12, 2021</span></p>
+    <a class="pf-card-link" href="{{ '/CTF/adventofcyber3/day12' | relative_url }}">Sharing Without Caring <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="pf-card">
+    <h2 class="pf-card-title"><i class="fas fa-calendar-day"></i> Day 13</h2>
+    <p class="pf-meta-line"><span class="pf-chip">Dec 13, 2021</span></p>
+    <a class="pf-card-link" href="{{ '/CTF/adventofcyber3/day13' | relative_url }}">They Lost the Plan! <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="pf-card">
+    <h2 class="pf-card-title"><i class="fas fa-calendar-day"></i> Day 14</h2>
+    <p class="pf-meta-line"><span class="pf-chip">Dec 14, 2021</span></p>
+    <a class="pf-card-link" href="{{ '/CTF/adventofcyber3/day14' | relative_url }}">Dev(Insecure)Ops <i class="fas fa-arrow-right"></i></a>
+  </article>
+  <article class="pf-card">
+    <h2 class="pf-card-title"><i class="fas fa-calendar-day"></i> Day 15</h2>
+    <p class="pf-meta-line"><span class="pf-chip">Dec 15, 2021</span></p>
+    <a class="pf-card-link" href="{{ '/CTF/adventofcyber3/day15' | relative_url }}">The Grinchs day off <i class="fas fa-arrow-right"></i></a>
+  </article>
+</div>

@@ -1,7 +1,7 @@
 ---
 title: Pickle Rick WalkThrough
 permalink: /CTF/pickleRick
-layout: page
+layout: writeup
 tags: TryHackMe
 ---
 # Picke Rick

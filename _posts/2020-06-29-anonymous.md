@@ -1,11 +1,11 @@
 ---
 title: Anonymous WalkThrough
 permalink: /CTF/anonymous
-layout: page
+layout: writeup
 tags: TryHackMe
 ---
 # Anonymouos
-# ![front](/images/Anonymous/front.png)
+# ![front](/images/anonymous/front.png)
 [https://tryhackme.com/room/anonymous](https://tryhackme.com/room/anonymous)
 
 ## Open Ports:
@@ -14,7 +14,7 @@ tags: TryHackMe
 - 139: NETBIOS-SSN
 - 445: MICROSOFT-DS
 
-![ports](/images/Anonymous/ports.png)
+![ports](/images/anonymous/ports.png)
 
 ## Gaining Access:
 1. In port 21[FTP] **Anonymous login** is _allowed_<br>
@@ -34,4 +34,4 @@ find / -perm -u=s 2>/dev/null
 * `./env/bin/bash -p`
 
 ### Root Flag:
-![root](/images/Anonymous/root.png)
+![root](/images/anonymous/root.png)

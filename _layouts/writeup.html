@@ -1,0 +1,20 @@
+---
+layout: default
+---
+{%- comment -%}
+  Frame for a single writeup.
+  The title comes from the post's own first heading, so it is not repeated
+  here; this adds the date, tags and a way back to the section.
+{%- endcomment -%}
+<article class="pf-writeup">
+  <p class="pf-writeup-meta">
+    <span class="pf-writeup-date">{{ page.date | date: "%b %-d, %Y" }}</span>
+    {% for tag in page.tags %}<span class="pf-chip">{{ tag }}</span>{% endfor %}
+  </p>
+
+  <div class="pf-writeup-body">
+    {{ content }}
+  </div>
+
+  <p class="pf-backlink"><a href="{{ '/CTF/' | relative_url }}"><i class="fas fa-chevron-left"></i> All CTF writeups</a></p>
+</article>

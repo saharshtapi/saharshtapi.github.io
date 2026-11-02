@@ -1,58 +1,164 @@
 ---
 layout: default1
 ---
-  {% include author.html %}
-<hr>
-<!-- CVES-->
-    <div class="post-links">
-        <div class="post-link-wrapper">
-          <a href="/CVES/" class="post-link"><h1 style="margin: 0;">CVEs</h1></a>
-          <div class="post-meta" style="color: #71513A;">
-            Dive into my CVE section to uncover detailed analyses of security vulnerabilities. From discovery to exploitation, explore how each CVE shapes the evolving landscape of cybersecurity.
-            <div class="post-tags">
-              <a class="tag">ZeroDay</a><a class="tag">Exploit</a>
-            </div> 
-          </div>
-        </div>
-    </div>
-<!-- BLOGS-->
-    <div class="post-links">
-        <div class="post-link-wrapper">
-          <a href="/blogs/" class="post-link"><h1 style="margin: 0;">Blogs</h1></a>
-          <div class="post-meta" style="color: #71513A;">
-            Explore my blog section to gain insights into the latest trends and techniques in cybersecurity. From malware to penetration testing, I cover a wide range of topics. Click on the link to discover my realm of knowledge.
-            <div class="post-tags">
-              <a class="tag">Malware</a><a class="tag">PenTesting</a>
-            </div> 
-          </div>
-        </div>
-    </div>
-<!-- PROJECTS -->
-    <div class="post-links">
-      <div class="post-link-wrapper">
-        <a href="/projects/" class="post-link"><h1 style="margin: 0;">Projects</h1></a>
-        <div class="post-meta" style="color: #71513A;">
-          Explore a wide spectrum of technology-based projects that I have created. From cutting-edge software to state-of-the-art hardware, my portfolio showcases a range of technologies. Discover my world of technology today!
-          <div class="post-tags">
-            <a class="tag">Hacking Tools</a>
-            <a class="tag">Vuln Machines</a>
-            <a class="tag">Data Analysis</a>
-          </div> 
-        </div>
-      </div>
-    </div>
-<!-- CTF WALKTHROUGH-->
-    <div class="post-links">
-      <div class="post-link-wrapper">
-        <a href="/CTF/" class="post-link"><h1 style="margin: 0;">CTF WalkThrough</h1></a>
-        <div class="post-meta" style="color: #71513A;">
-          Gain valuable insights into the world of cybersecurity and improve your skills by exploring my comprehensive guide on various CTF challenges. Are you ready to compete with the best?
-          <div class="post-tags">
-            <a class="tag">TryHackMe</a>
-            <a class="tag">HackTheBox</a>
-            <a class="tag">VulnHub</a>
-          </div> 
-        </div>
-      </div>
+<!-- ==================== HERO ==================== -->
+<section class="pf-hero" id="top">
+  <div class="pf-hero-main">
+    <p class="pf-prompt">~/portfolio <span class="pf-sym">$</span> <span class="pf-cmd">whoami</span></p>
+    <h1 class="pf-name">Saharsh Agrawal</h1>
+    <p class="pf-role">
+      <span class="pf-dot"></span>
+      Security Researcher <span class="pf-sep">&middot;</span> Threat Intelligence <span class="pf-sep">&middot;</span> Pentester
+    </p>
+    <p class="pf-tagline">
+      I hunt for vulnerabilities, dissect malware campaigns, and turn what I learn into tooling
+      other people can use. With a published CVE and a shelf of CTF writeups, I document every
+      finding in full detail so it can be reproduced, reviewed, and defended against.
+    </p>
+
+    <div class="pf-cta">
+      <a class="pf-btn pf-btn-primary" href="{{ '/projects/' | relative_url }}"><i class="fas fa-project-diagram"></i> Projects</a>
+      <a class="pf-btn" href="{{ '/CVES/' | relative_url }}"><i class="fas fa-bug"></i> CVE Research</a>
+      <a class="pf-btn" href="{{ '/CTF/' | relative_url }}"><i class="fas fa-terminal"></i> CTF Writeups</a>
+      <a class="pf-btn" href="{{ '/blogs/' | relative_url }}"><i class="fas fa-newspaper"></i> Threat Research</a>
     </div>
 
+  </div>
+
+  <aside class="pf-hero-card">
+    <img src="{{ '/assets/favicon.png' | relative_url }}" alt="Saharsh Agrawal" class="pf-avatar" />
+    <p class="pf-card-status"><span class="pf-dot"></span> Open to research collaborations</p>
+    <dl class="pf-facts">
+      <div class="pf-fact"><dt>Role</dt><dd>Security Researcher <span class="pf-sep">&middot;</span> Threat Intelligence <span class="pf-sep">&middot;</span> Pentester</dd></div>
+      <div class="pf-fact"><dt>Focus</dt><dd>Web App Security &middot; Malware Analysis &middot; Vulnerability Research</dd></div>
+      <div class="pf-fact"><dt>Toolkit</dt><dd>Burp &middot; Nuclei &middot; Ghidra &middot; Nmap</dd></div>
+      <div class="pf-fact"><dt>Platforms</dt><dd>AWS &middot; Azure &middot; GCP</dd></div>
+    </dl>
+  </aside>
+</section>
+
+<!-- ==================== STATS ==================== -->
+<section class="pf-stats">
+  <div class="pf-stat">
+    <span class="pf-stat-num">{{ site.posts | size }}</span>
+    <span class="pf-stat-label">CTF Writeups</span>
+  </div>
+  <div class="pf-stat pf-stat-highlight">
+    <span class="pf-stat-num">{{ site.cves | size }}</span>
+    <span class="pf-stat-label">Published CVEs</span>
+  </div>
+  <div class="pf-stat">
+    <span class="pf-stat-num">{{ site.Projects | size }}</span>
+    <span class="pf-stat-label">Projects &amp; Tools</span>
+  </div>
+  <div class="pf-stat">
+    <span class="pf-stat-num">{{ site.portfolio.blog_articles | size }}</span>
+    <span class="pf-stat-label">Threat Research Articles</span>
+  </div>
+</section>
+
+<!-- ==================== WHAT I DO ==================== -->
+<section class="pf-section" id="services">
+  <h2 class="pf-h2"><span class="pf-h2-prompt">$</span> cat ./what-i-do.md</h2>
+  <div class="pf-grid pf-grid-4">
+    <article class="pf-card">
+      <h3 class="pf-card-title"><i class="fas fa-bug"></i> Vulnerability Research</h3>
+      <p>Source review and dynamic testing of web applications to find real, reportable bugs &mdash; open redirects, broken access control and injection flaws &mdash; then writing them up as CVEs.</p>
+    </article>
+    <article class="pf-card">
+      <h3 class="pf-card-title"><i class="fas fa-crosshairs"></i> Penetration Testing</h3>
+      <p>End-to-end offensive engagements: enumeration, exploitation, privilege escalation and lateral movement, with every step captured so the fix is obvious at the end.</p>
+    </article>
+    <article class="pf-card">
+      <h3 class="pf-card-title"><i class="fas fa-radiation"></i> Threat Intelligence</h3>
+      <p>Malware and intrusion analysis published with the research team at Loginsoft &mdash; tracking how commodity loaders such as IcedID, Qakbot and Aurora are delivered and evolved.</p>
+    </article>
+    <article class="pf-card">
+      <h3 class="pf-card-title"><i class="fas fa-terminal"></i> Automation &amp; Tooling</h3>
+      <p>Small, focused tools that remove the repetitive parts of recon and analysis, plus data pipelines that turn raw market and telemetry data into something you can act on.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ==================== FEATURED WORK ==================== -->
+<section class="pf-section" id="work">
+  <h2 class="pf-h2"><span class="pf-h2-prompt">$</span> ls ./featured</h2>
+  <div class="pf-grid pf-grid-3">
+
+    <article class="pf-card">
+      <h3 class="pf-card-title"><i class="fas fa-project-diagram"></i> Projects</h3>
+      <ul class="pf-list">
+        {% for project in site.Projects %}
+          <li>
+            <a href="{{ project.permalink }}" target="_blank" rel="noopener">{{ project.title }}</a>
+            <span class="pf-list-meta">{{ project.tags | join: ' &middot; ' }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+      <a class="pf-card-link" href="{{ '/projects/' | relative_url }}">All projects <i class="fas fa-arrow-right"></i></a>
+    </article>
+
+    <article class="pf-card">
+      <h3 class="pf-card-title"><i class="fas fa-bug"></i> CVE Research</h3>
+      <ul class="pf-list">
+        {% for cve in site.cves %}
+          <li>
+            <a href="{{ cve.permalink | relative_url }}" target="_blank" rel="noopener">{{ cve.title }}</a>
+            <span class="pf-list-meta">{{ cve.tags | join: ' &middot; ' }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+      <a class="pf-card-link" href="{{ '/CVES/' | relative_url }}">All CVE analysis <i class="fas fa-arrow-right"></i></a>
+    </article>
+
+    <article class="pf-card">
+      <h3 class="pf-card-title"><i class="fas fa-terminal"></i> Recent Writeups</h3>
+      <ul class="pf-list">
+        {% for post in site.posts limit: 6 %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="pf-list-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+      <a class="pf-card-link" href="{{ '/CTF/' | relative_url }}">All writeups <i class="fas fa-arrow-right"></i></a>
+    </article>
+
+  </div>
+</section>
+
+<!-- ==================== SELECTED WRITING ==================== -->
+<section class="pf-section" id="writing">
+  <h2 class="pf-h2"><span class="pf-h2-prompt">$</span> tail -f ./threat-research.log</h2>
+  <div class="pf-grid pf-grid-2">
+    {% for article in site.portfolio.blog_articles %}
+      <article class="pf-card pf-card-flat">
+        <h3 class="pf-card-title">
+          <a href="{{ article.url }}" target="_blank" rel="noopener">{{ article.title }}</a>
+        </h3>
+        <p class="pf-meta-line">
+          {{ article.date }}
+          {% for tag in article.tags %}<span class="pf-chip">{{ tag }}</span>{% endfor %}
+        </p>
+        <p>{{ article.excerpt }}</p>
+        <a class="pf-card-link" href="{{ article.url }}" target="_blank" rel="noopener">Read article <i class="fas fa-arrow-right"></i></a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section class="pf-section pf-contact" id="contact">
+  <h2 class="pf-h2"><span class="pf-h2-prompt">$</span> contact --info</h2>
+  <p class="pf-contact-lead">
+    Open to security research roles, freelance assessments, and collaboration on tooling or
+    interesting problems. The fastest way to reach me is email.
+  </p>
+  <ul class="pf-contact-list">
+    <li><i class="fas fa-envelope"></i><a href="mailto:saharshtapi@gmail.com">saharshtapi@gmail.com</a></li>
+    <li><i class="fab fa-github"></i><a href="https://github.com/saharshtapi" target="_blank" rel="noopener">github.com/saharshtapi</a></li>
+    <li><i class="fab fa-linkedin-in"></i><a href="https://www.linkedin.com/in/saharsh-agrawal-146b991b4/" target="_blank" rel="noopener">linkedin.com/in/saharsh-agrawal</a></li>
+    <li><i class="fab fa-twitter-square"></i><a href="https://twitter.com/saharshtapi" target="_blank" rel="noopener">@saharshtapi</a></li>
+    <li><i class="fas fa-mug-hot"></i><a href="https://www.buymeacoffee.com/saharshtapi" target="_blank" rel="noopener">buymeacoffee.com/saharshtapi</a></li>
+  </ul>
+</section>

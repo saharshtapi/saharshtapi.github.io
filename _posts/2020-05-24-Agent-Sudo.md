@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: writeup
 title: Agent Sudo WalkThrough
 permalink: /CTF/agentSudo
 tags: TryHackMe

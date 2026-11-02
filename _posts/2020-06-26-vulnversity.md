@@ -1,7 +1,7 @@
 ---
 title: Vulnversity WalkThrough
 permalink: /CTF/vulnversity
-layout: page
+layout: writeup
 tags: TryHackMe
 ---
 # Vulnversity

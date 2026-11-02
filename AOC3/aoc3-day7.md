@@ -1,6 +1,6 @@
 ---
 title: Day 7
-layout: page
+layout: writeup
 permalink: /CTF/adventofcyber3/day7
 tags: TryHackMe
 ---

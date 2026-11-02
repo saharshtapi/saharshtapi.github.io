@@ -1,47 +1,17 @@
 ---
 layout: default1
 ---
-{% include author.html %}
-<hr>
-<h1>CTF WalkThrough</h1>
-    <div class="post-links">
-    {% for post in site.posts %}
-        <div class="post-link-wrapper">
-          <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
-          <div class="post-meta">
-<!-- 
-            {% if site.plugins contains "jekyll/tagging" %}
-            <div class="post-tags">
-                {% for tag in post.tags %}
-                <a class="tag">TryHackMe</a>
-                {% endfor %}
-            </div>
-            {% endif %} -->
-            <div class="post-links">
-            <div class="post-link-wrapper">
-            <div class="post-meta">
-            <div class="post-tags">
-                <a class="tag">TryHackMe</a>
-              </div> 
-              <div class="post-excerpt">
-              </div>
-            </div>
-             </div>
-            </div>
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-    {% endfor %}
-    </div>
+{% include section-hero.html cmd="ls ./ctf" %}
 
-    {% include pagination.html %}
-
+<div class="pf-grid pf-grid-3">
+  {% for post in site.posts %}
+    <article class="pf-card">
+      <h2 class="pf-card-title"><i class="fas fa-terminal"></i> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <p class="pf-meta-line">
+        {{ post.date | date: "%b %-d, %Y" }}
+        {% for tag in post.tags %}<span class="pf-chip">{{ tag }}</span>{% endfor %}
+      </p>
+      <a class="pf-card-link" href="{{ post.url | relative_url }}">Read walkthrough <i class="fas fa-arrow-right"></i></a>
+    </article>
+  {% endfor %}
+</div>

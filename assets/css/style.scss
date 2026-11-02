@@ -1,5 +1,4 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
 
 @import "dash";
@@ -8,4 +7,946 @@
     @include themed() {
         color: t('foreground-color');
     }
+}
+
+/* ==========================================================================
+   Portfolio
+   ========================================================================== */
+
+/* --- Page frame ---------------------------------------------------------- */
+
+.pf-page .wrapper {
+  max-width: 1080px;
+}
+
+.pf-hero,
+.pf-section,
+.pf-section-hero,
+.pf-stats,
+.pf-tagline,
+.pf-contact-lead,
+.pf-writeup-body {
+  text-align: left;
+}
+
+/* --- Hero ---------------------------------------------------------------- */
+
+.pf-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+  padding-bottom: 0.5rem;
+
+  @include media-query($on-laptop) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+.pf-prompt {
+  font-family: $syntax-font-family;
+  font-size: $small-font-size;
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.02em;
+
+  @include themed() {
+    color: rgba(t('foreground-color'), 0.72);
+  }
+}
+
+.pf-sym {
+  color: $color-green;
+}
+
+.pf-cmd {
+  color: $color-cyan;
+}
+
+.pf-name {
+  font-size: 2.75rem;
+  line-height: 1.1;
+  margin: 0 0 0.4rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: $color-blue;
+}
+
+.pf-role {
+  font-size: $base-font-size * 1.05;
+  font-weight: 500;
+  margin: 0 0 1.1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include themed() {
+    color: t('foreground-color');
+  }
+}
+
+.pf-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: $color-green;
+  margin-right: 0.6em;
+  box-shadow: 0 0 0 0 rgba($color-green, 0.6);
+  animation: pf-pulse 2.4s infinite;
+}
+
+@keyframes pf-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba($color-green, 0.55); }
+  70%  { box-shadow: 0 0 0 9px rgba($color-green, 0); }
+  100% { box-shadow: 0 0 0 0 rgba($color-green, 0); }
+}
+
+.pf-sep {
+  color: $color-pink;
+  margin: 0 0.45em;
+}
+
+.pf-tagline {
+  font-size: $base-font-size * 1.05;
+  line-height: 1.65;
+  max-width: 34em;
+  margin: 0 0 1.6rem;
+
+  @include themed() {
+    color: rgba(t('foreground-color'), 0.72);
+  }
+}
+
+/* --- Buttons ------------------------------------------------------------- */
+
+.pf-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.pf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.55em 1.1em;
+  border-radius: 0.35em;
+  font-size: $small-font-size;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+
+  @include themed() {
+    color: t('foreground-color');
+    border-color: rgba(t('foreground-color'), 0.22);
+    background-color: rgba(t('foreground-color'), 0.04);
+  }
+
+  &:hover,
+  &:visited {
+    text-decoration: none;
+    transform: translateY(-1px);
+    border-color: $color-cyan;
+    color: $color-cyan;
+  }
+
+  i {
+    font-size: 0.95em;
+  }
+}
+
+.pf-btn-primary {
+  color: #fff !important;
+  background-color: $color-blue;
+  border-color: $color-blue;
+
+  &:hover,
+  &:visited {
+    background-color: darken($color-blue, 8%);
+    border-color: darken($color-blue, 8%);
+    color: #fff !important;
+  }
+}
+
+/* --- Social row ---------------------------------------------------------- */
+
+.pf-social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 0.35em;
+    font-size: $base-font-size * 1.05;
+    text-decoration: none;
+    transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+
+    @include themed() {
+      color: rgba(t('foreground-color'), 0.72);
+      border: 1px solid rgba(t('foreground-color'), 0.18);
+    }
+
+    &:hover {
+      color: $color-cyan !important;
+      border-color: $color-cyan;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* --- Hero card ----------------------------------------------------------- */
+
+.pf-hero-card {
+  border-radius: 0.5em;
+  padding: 1.4rem;
+  text-align: left;
+
+  @include themed() {
+    background-color: t('background-color');
+    border: 1px solid rgba(t('foreground-color'), 0.12);
+  }
+}
+
+.pf-avatar {
+  display: block;
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 0.5em;
+  margin-bottom: 1rem;
+
+  @include themed() {
+    border: 1px solid rgba(t('foreground-color'), 0.14);
+  }
+}
+
+.pf-card-status {
+  display: flex;
+  align-items: center;
+  font-size: $small-font-size;
+  margin: 0 0 0.9rem;
+
+  @include themed() {
+    color: rgba(t('foreground-color'), 0.72);
+  }
+}
+
+.pf-facts {
+  margin: 0;
+}
+
+.pf-fact {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  font-size: $small-font-size;
+
+  & + .pf-fact {
+    border-top: 1px dashed;
+    @include themed() {
+      border-color: rgba(t('foreground-color'), 0.12);
+    }
+  }
+
+  dt {
+    font-weight: 500;
+    white-space: nowrap;
+
+    @include themed() {
+      color: t('foreground-color');
+    }
+  }
+
+  dd {
+    margin: 0;
+    text-align: right;
+
+    @include themed() {
+      color: rgba(t('foreground-color'), 0.72);
+    }
+
+    a,
+    a:visited {
+      color: $color-pink;
+      text-decoration: none;
+
+      &:hover {
+        color: lighten($color-pink, 15%);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* --- Badge --------------------------------------------------------------- */
+
+.pf-badge {
+  margin-top: 1.2rem;
+  overflow: hidden;
+  max-width: 100%;
+
+  iframe {
+    max-width: 100%;
+  }
+}
+
+/* --- Section hero -------------------------------------------------------- */
+
+.pf-section-hero {
+  margin-bottom: 2.2rem;
+}
+
+.pf-section-title {
+  font-size: 2.3rem;
+}
+
+.pf-backlink {
+  margin: 2rem 0 0;
+  font-size: $small-font-size;
+
+  a,
+  a:visited {
+    color: $color-cyan;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-green;
+      text-decoration: none;
+    }
+  }
+
+  i {
+    margin-right: 0.3em;
+  }
+}
+
+/* --- Writeup ------------------------------------------------------------- */
+
+.pf-writeup-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 0.6rem;
+  font-family: $syntax-font-family;
+  font-size: $base-font-size * 0.8;
+
+  @include themed() {
+    color: rgba(t('foreground-color'), 0.72);
+  }
+}
+
+.pf-writeup-body {
+  > h1:first-of-type {
+    font-size: 2.2rem;
+    line-height: 1.15;
+    margin: 0 0 1rem;
+    font-weight: 400;
+    color: $color-blue;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: $color-blue;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid;
+
+    @include themed() {
+      border-bottom-color: rgba(t('foreground-color'), 0.12);
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.4em;
+    display: block;
+    margin: 1.2rem 0;
+  }
+
+  a,
+  a:visited {
+    color: $color-cyan;
+  }
+
+  code {
+    font-family: $syntax-font-family;
+  }
+}
+
+/* --- Stats --------------------------------------------------------------- */
+
+.pf-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2.5rem 0 3rem;
+
+  @include media-query($on-palm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.pf-stat {
+  padding: 1.1rem 1.2rem;
+  border-radius: 0.45em;
+  border-left: 3px solid $color-cyan;
+
+  @include themed() {
+    background-color: t('background-color');
+    border-top: 1px solid rgba(t('foreground-color'), 0.08);
+    border-right: 1px solid rgba(t('foreground-color'), 0.08);
+    border-bottom: 1px solid rgba(t('foreground-color'), 0.08);
+  }
+}
+
+.pf-stat-highlight {
+  border-left-color: $color-pink;
+
+  .pf-stat-num {
+    color: $color-pink;
+  }
+}
+
+.pf-stat-num {
+  display: block;
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 400;
+  color: $color-cyan;
+}
+
+.pf-stat-label {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: $small-font-size;
+
+  @include themed() {
+    color: rgba(t('foreground-color'), 0.72);
+  }
+}
+
+/* --- Sections ------------------------------------------------------------ */
+
+.pf-section {
+  margin-bottom: 3rem;
+}
+
+.pf-h2 {
+  font-family: $syntax-font-family;
+  font-size: $base-font-size * 1.15;
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+  color: $color-green;
+  word-break: break-word;
+}
+
+.pf-h2-prompt {
+  color: $color-pink;
+  margin-right: 0.4em;
+}
+
+.pf-section-lead {
+  margin-top: -0.8rem;
+  margin-bottom: 1.5rem;
+
+  @include themed() {
+    color: rgba(t('foreground-color'), 0.72);
+  }
+}
+
+/* --- Grids & cards ------------------------------------------------------- */
+
+.pf-grid {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.pf-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  @include media-query($on-laptop) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include media-query($on-palm) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.pf-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+
+  @include media-query($on-laptop) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include media-query($on-palm) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.pf-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @include media-query($on-laptop) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.pf-card {
+  padding: 1.25rem 1.3rem;
+  border-radius: 0.45em;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+
+  @include themed() {
+    background-color: t('background-color');
+    border: 1px solid rgba(t('foreground-color'), 0.12);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+
+    @include themed() {
+      border-color: rgba($color-cyan, 0.5);
+    }
+  }
+
+  p {
+    font-size: $small-font-size;
+    line-height: 1.6;
+    margin: 0.6rem 0 0;
+
+    @include themed() {
+      color: rgba(t('foreground-color'), 0.72);
+    }
+  }
+}
+
+.pf-card-flat {
+  &:hover {
+    transform: none;
+  }
+}
+
+.pf-card-title {
+  font-size: $base-font-size * 1.05;
+  font-weight: 500;
+  margin: 0;
+  color: $color-blue;
+
+  i {
+    margin-right: 0.4em;
+    color: $color-purple;
+  }
+
+  a,
+  a:visited {
+    color: $color-blue;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-cyan;
+      text-decoration: none;
+    }
+  }
+}
+
+.pf-card-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: $small-font-size;
+  font-weight: 500;
+  color: $color-pink;
+  text-decoration: none;
+
+  &:hover,
+  &:visited {
+    color: lighten($color-pink, 15%);
+    text-decoration: none;
+  }
+}
+
+/* --- Lists --------------------------------------------------------------- */
+
+.pf-list {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0.55rem 0;
+    font-size: $small-font-size;
+
+    & + li {
+      border-top: 1px dashed;
+      @include themed() {
+        border-color: rgba(t('foreground-color'), 0.1);
+      }
+    }
+
+    a,
+    a:visited {
+      font-weight: 500;
+      text-decoration: none;
+      color: $color-cyan;
+
+      &:hover {
+        color: $color-green;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.pf-list-meta {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: $base-font-size * 0.78;
+
+  @include themed() {
+    color: rgba(t('foreground-color'), 0.72);
+  }
+}
+
+/* --- Writing ------------------------------------------------------------- */
+
+.pf-meta-line {
+  margin: 0.5rem 0 0 !important;
+  font-size: $base-font-size * 0.78 !important;
+
+  @include themed() {
+    color: rgba(t('foreground-color'), 0.72);
+  }
+}
+
+.pf-chip {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.15em 0.6em;
+  border-radius: 0.9em;
+  font-size: $base-font-size * 0.72;
+  color: $color-green;
+
+  @include themed() {
+    background-color: rgba($color-green, 0.12);
+  }
+}
+
+/* --- Contact ------------------------------------------------------------- */
+
+.pf-contact-lead {
+  max-width: 40em;
+  margin-bottom: 1.5rem;
+
+  @include themed() {
+    color: rgba(t('foreground-color'), 0.72);
+  }
+}
+
+.pf-contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 1.5rem;
+
+  @include media-query($on-palm) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  li {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: $small-font-size;
+
+    i {
+      width: 1.1rem;
+      text-align: center;
+      color: $color-purple;
+    }
+
+    a,
+    a:visited {
+      text-decoration: none;
+      color: $color-cyan;
+      word-break: break-all;
+
+      &:hover {
+        color: $color-green;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* --- Timeline ------------------------------------------------------------ */
+
+.pf-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 26px;
+
+  li {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding-bottom: 1.5rem;
+    position: relative;
+
+    &:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      left: -12.5px;
+      top: 14px;
+      bottom: -2px;
+      width: 1px;
+
+      @include themed() {
+        background-color: rgba(t('foreground-color'), 0.16);
+      }
+    }
+  }
+}
+
+.pf-timeline-year {
+  flex: 0 0 3.8rem;
+  font-family: $syntax-font-family;
+  font-size: $small-font-size;
+  color: $color-cyan;
+  padding-top: 0.15rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -17px;
+    top: 0.45rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: $color-green;
+  }
+}
+
+.pf-timeline-body {
+  flex: 1 1 auto;
+  min-width: 0;
+
+  h3 {
+    font-size: $base-font-size * 1.05;
+    font-weight: 500;
+    margin: 0 0 0.35rem;
+    color: $color-blue;
+  }
+
+  p {
+    font-size: $small-font-size;
+    line-height: 1.6;
+    margin: 0.4rem 0 0;
+
+    @include themed() {
+      color: rgba(t('foreground-color'), 0.72);
+    }
+  }
+
+  a {
+    color: $color-cyan;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-green;
+      text-decoration: none;
+    }
+  }
+}
+
+/* --- Timeline highlight -------------------------------------------------- */
+
+.pf-timeline-highlight {
+  .pf-timeline-year {
+    color: $color-pink;
+  }
+
+  .pf-timeline-year::before {
+    background-color: $color-pink;
+  }
+
+  h3 {
+    color: $color-pink;
+  }
+}
+
+/* --- Skill list ---------------------------------------------------------- */
+
+.pf-skill-list {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  font-size: $small-font-size;
+
+  li {
+    margin: 0;
+    padding: 0.3rem 0;
+
+    @include themed() {
+      color: rgba(t('foreground-color'), 0.72);
+    }
+  }
+
+  li::before {
+    content: "\f105";
+    @include font-awesome-icon;
+    color: $color-purple;
+    margin-right: 0.6em;
+  }
+}
+
+/* --- Navigation ---------------------------------------------------------- */
+
+.pf-nav {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 1.1rem;
+  padding: 0.6rem 0 0.4rem;
+  font-family: $syntax-font-family;
+  font-size: $base-font-size * 0.82;
+  line-height: 1.7;
+
+  a {
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+
+    @include themed() {
+      color: rgba(t('foreground-color'), 0.72);
+    }
+
+    &:hover,
+    &:visited {
+      color: $color-cyan;
+      border-bottom-color: $color-cyan;
+      text-decoration: none;
+    }
+  }
+
+  a.pf-nav-active,
+  a.pf-nav-active:visited {
+    color: $color-green;
+    border-bottom-color: $color-green;
+  }
+}
+
+/* --- Light theme pink ---------------------------------------------------- */
+
+// #f24784 on a white card is only about 2.8:1, too low to read comfortably.
+// The same hue, darkened, keeps the highlight and clears the contrast bar.
+$pf-pink-light: darken($color-pink, 22%);
+
+.theme--light {
+  .pf-sep,
+  .pf-h2-prompt {
+    color: $pf-pink-light;
+  }
+
+  .pf-fact dd a,
+  .pf-fact dd a:visited {
+    color: $pf-pink-light;
+
+    &:hover {
+      color: darken($color-pink, 32%);
+    }
+  }
+
+  .pf-card-link,
+  .pf-card-link:visited {
+    color: $pf-pink-light;
+
+    &:hover {
+      color: darken($color-pink, 32%);
+    }
+  }
+
+  .pf-stat-highlight {
+    border-left-color: $pf-pink-light;
+
+    .pf-stat-num {
+      color: $pf-pink-light;
+    }
+  }
+
+  .pf-timeline-highlight {
+    .pf-timeline-year,
+    h3 {
+      color: $pf-pink-light;
+    }
+
+    .pf-timeline-year::before {
+      background-color: $pf-pink-light;
+    }
+  }
+}
+
+/* --- Hero card color accents ------------------------------------------- */
+
+.pf-hero-card {
+  border-left: 3px solid $color-cyan;
+
+  @include themed() {
+    border-left: 3px solid $color-cyan;
+  }
+
+  &:hover {
+    @include themed() {
+      border-left-color: $color-blue;
+      border-color: rgba(t('foreground-color'), 0.22);
+    }
+  }
+}
+
+.pf-card-status .pf-dot {
+  background-color: $color-green;
+  box-shadow: 0 0 0 0 rgba($color-green, 0.6);
+  animation: pf-pulse 2.4s infinite;
+}
+
+/* Colored labels in hero card facts */
+.pf-hero-card .pf-fact dt {
+  @include themed() {
+    color: $color-cyan;
+  }
+}
+
+.pf-hero-card .pf-fact dd a,
+.pf-hero-card .pf-fact dd a:visited {
+  @include themed() {
+    color: $color-pink;
+  }
 }

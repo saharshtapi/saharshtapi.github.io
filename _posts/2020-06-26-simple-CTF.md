@@ -1,7 +1,7 @@
 ---
 title: Simple CTF WalkThrough
 permalink: /CTF/simplectf
-layout: page
+layout: writeup
 tags: TryHackMe
 ---
 # Simple CTF

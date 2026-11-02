@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: writeup
 title: Charlie and The Chocolate Factory CTF WalkThrough
 permalink: /CTF/chocolate
 tags: TryHackMe

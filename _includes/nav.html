@@ -1,0 +1,24 @@
+{%- comment -%}
+  Primary site navigation.
+  Highlights the section the current page belongs to.
+{%- endcomment -%}
+{%- assign pf_home = false -%}
+{%- if page.url == '/' -%}{%- assign pf_home = true -%}{%- endif -%}
+{%- assign pf_about = false -%}
+{%- if page.url contains '/about' -%}{%- assign pf_about = true -%}{%- endif -%}
+{%- assign pf_projects = false -%}
+{%- if page.url contains '/projects' or page.url contains '/Projects' -%}{%- assign pf_projects = true -%}{%- endif -%}
+{%- assign pf_cves = false -%}
+{%- if page.url contains '/CVES' or page.url contains '/cves' -%}{%- assign pf_cves = true -%}{%- endif -%}
+{%- assign pf_ctf = false -%}
+{%- if page.url contains '/CTF' -%}{%- assign pf_ctf = true -%}{%- endif -%}
+{%- assign pf_blogs = false -%}
+{%- if page.url contains '/blogs' -%}{%- assign pf_blogs = true -%}{%- endif -%}
+<nav class="pf-nav" aria-label="Primary">
+  <a href="{{ '/about/' | relative_url }}" {% if pf_about %}class="pf-nav-active"{% endif %}>About</a>
+  <a href="{{ '/projects/' | relative_url }}" {% if pf_projects %}class="pf-nav-active"{% endif %}>Projects</a>
+  <a href="{{ '/CVES/' | relative_url }}" {% if pf_cves %}class="pf-nav-active"{% endif %}>CVEs</a>
+  <a href="{{ '/CTF/' | relative_url }}" {% if pf_ctf %}class="pf-nav-active"{% endif %}>CTF</a>
+  <a href="{{ '/blogs/' | relative_url }}" {% if pf_blogs %}class="pf-nav-active"{% endif %}>Writing</a>
+  <a href="{{ '/' | relative_url }}#contact">Contact</a>
+</nav>

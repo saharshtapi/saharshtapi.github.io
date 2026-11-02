@@ -1,7 +1,7 @@
 ---
 title: LazyAdmin WalkThrough
 permalink: /CTF/lazyAdmin
-layout: page
+layout: writeup
 tags: TryHackMe
 ---
 # Lazy Admin

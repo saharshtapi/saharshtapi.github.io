@@ -1,0 +1,11 @@
+{%- comment -%}
+  Section header shared by every section page.
+  Uses the page's own title and description, so each page gets a unique
+  <title> and meta description from jekyll-seo-tag.
+{%- endcomment -%}
+<section class="pf-section-hero">
+  <p class="pf-prompt">~/portfolio <span class="pf-sym">$</span> <span class="pf-cmd">{{ include.cmd }}</span></p>
+  <h1 class="pf-name pf-section-title">{{ page.title }}</h1>
+  {% if page.description %}<p class="pf-tagline">{{ page.description }}</p>{% endif %}
+  <p class="pf-backlink"><a href="{{ '/' | relative_url }}"><i class="fas fa-chevron-left"></i> Back to the portfolio</a></p>
+</section>
